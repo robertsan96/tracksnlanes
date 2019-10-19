@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Track Detail View Controller-->
+        <scene sceneID="s2a-9G-GCB">
+            <objects>
+                <viewController storyboardIdentifier="TrackDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0mr-P2-BA9" customClass="TrackDetailViewController" customModule="ProjectME" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AeA-Y4-w9o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3c-fb-thb" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7LP-qi-vEH"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="003-Fq-Db0">
+                                <rect key="frame" x="10" y="152" width="394" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="gZL-Co-dB7"/>
+                                </constraints>
+                                <string key="text">A new journey begins with a great name. Name your track in such a way that it will always remind you the goal. Keep in mind that the track is made of lanes.
+
+Almost everybody has a "Weight Loss" track made of the following lanes: Weight, Chest Size, Belly Size.. and so.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="003-Fq-Db0" firstAttribute="top" secondItem="d3c-fb-thb" secondAttribute="bottom" constant="8" id="9ur-ZG-8bi"/>
+                            <constraint firstItem="SMz-Nx-hIG" firstAttribute="trailing" secondItem="003-Fq-Db0" secondAttribute="trailing" constant="10" id="PJY-lt-pMa"/>
+                            <constraint firstItem="003-Fq-Db0" firstAttribute="leading" secondItem="SMz-Nx-hIG" secondAttribute="leading" constant="10" id="k4B-nk-Xzg"/>
+                            <constraint firstItem="d3c-fb-thb" firstAttribute="top" secondItem="SMz-Nx-hIG" secondAttribute="top" constant="50" id="llg-lK-GEJ"/>
+                            <constraint firstItem="d3c-fb-thb" firstAttribute="leading" secondItem="SMz-Nx-hIG" secondAttribute="leading" id="oAE-bd-K7j"/>
+                            <constraint firstItem="d3c-fb-thb" firstAttribute="trailing" secondItem="SMz-Nx-hIG" secondAttribute="trailing" id="xmT-ha-4Yg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SMz-Nx-hIG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H6I-1M-o6j"/>
+                    <connections>
+                        <outlet property="trackNameTextFieldWithLabel" destination="d3c-fb-thb" id="nnt-C8-SAF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OxP-bh-bkG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="882.60869565217399" y="138.61607142857142"/>
+        </scene>
+        <!--Track Navigation View Controller-->
+        <scene sceneID="gge-kq-wwr">
+            <objects>
+                <navigationController storyboardIdentifier="TrackNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fjN-uw-QrJ" customClass="TrackNavigationViewController" customModule="ProjectME" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TOU-Uk-OxP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgc-fF-fe1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>

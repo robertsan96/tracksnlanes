@@ -50,6 +50,14 @@
 		465955A8235B649D002347F9 /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955A7235B649D002347F9 /* ResourceType.swift */; };
 		465955B1235BA86D002347F9 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955B0235BA86D002347F9 /* CoreDataService.swift */; };
 		465955B3235BAB72002347F9 /* NSManagedObject+EntityName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955B2235BAB72002347F9 /* NSManagedObject+EntityName.swift */; };
+		465955B8235BB1DB002347F9 /* Track.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 465955B7235BB1DB002347F9 /* Track.storyboard */; };
+		465955BA235BB226002347F9 /* TrackNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955B9235BB226002347F9 /* TrackNavigationViewController.swift */; };
+		465955BC235BB253002347F9 /* TrackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955BB235BB253002347F9 /* TrackDetailViewController.swift */; };
+		465955BE235BB264002347F9 /* TrackDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955BD235BB264002347F9 /* TrackDetailViewModel.swift */; };
+		465955C2235BBA2A002347F9 /* SelectPredefinedLanesTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955C1235BBA2A002347F9 /* SelectPredefinedLanesTableViewModel.swift */; };
+		465955C4235BBBBB002347F9 /* SelectPredefinedLanesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955C3235BBBBB002347F9 /* SelectPredefinedLanesTableViewController.swift */; };
+		465955C8235BC087002347F9 /* SelectPredefinedLaneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955C6235BC087002347F9 /* SelectPredefinedLaneTableViewCell.swift */; };
+		465955C9235BC087002347F9 /* SelectPredefinedLaneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 465955C7235BC087002347F9 /* SelectPredefinedLaneTableViewCell.xib */; };
 		837E060A47F4680C4650E36D /* Pods_ProjectME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27E882DD62CCF72C9BF5A97 /* Pods_ProjectME.framework */; };
 		F2464BC15FE2876DF5DC3794 /* Pods_ProjectMETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5A56FF1D30379FC55F4B2F /* Pods_ProjectMETests.framework */; };
 /* End PBXBuildFile section */
@@ -122,6 +130,14 @@
 		465955A7235B649D002347F9 /* ResourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceType.swift; sourceTree = "<group>"; };
 		465955B0235BA86D002347F9 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		465955B2235BAB72002347F9 /* NSManagedObject+EntityName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+EntityName.swift"; sourceTree = "<group>"; };
+		465955B7235BB1DB002347F9 /* Track.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Track.storyboard; sourceTree = "<group>"; };
+		465955B9235BB226002347F9 /* TrackNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackNavigationViewController.swift; sourceTree = "<group>"; };
+		465955BB235BB253002347F9 /* TrackDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailViewController.swift; sourceTree = "<group>"; };
+		465955BD235BB264002347F9 /* TrackDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailViewModel.swift; sourceTree = "<group>"; };
+		465955C1235BBA2A002347F9 /* SelectPredefinedLanesTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPredefinedLanesTableViewModel.swift; sourceTree = "<group>"; };
+		465955C3235BBBBB002347F9 /* SelectPredefinedLanesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPredefinedLanesTableViewController.swift; sourceTree = "<group>"; };
+		465955C6235BC087002347F9 /* SelectPredefinedLaneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPredefinedLaneTableViewCell.swift; sourceTree = "<group>"; };
+		465955C7235BC087002347F9 /* SelectPredefinedLaneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPredefinedLaneTableViewCell.xib; sourceTree = "<group>"; };
 		6C1C191FC7D6CC629B51B838 /* Pods-ProjectME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.release.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.release.xcconfig"; sourceTree = "<group>"; };
 		958B0C7BCEE1C29C7E5C4216 /* Pods-ProjectMETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMETests.release.xcconfig"; path = "Target Support Files/Pods-ProjectMETests/Pods-ProjectMETests.release.xcconfig"; sourceTree = "<group>"; };
 		BE39A6C3F23B42A4E9A3B4A4 /* Pods-ProjectME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.debug.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.debug.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +233,7 @@
 		46595532235AE48F002347F9 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				465955B4235BB1BE002347F9 /* Track */,
 				46595587235B4AFB002347F9 /* Reusable */,
 				4659554B235B0E3B002347F9 /* Home */,
 				46595579235B4419002347F9 /* Lane */,
@@ -378,6 +395,7 @@
 		46595579235B4419002347F9 /* Lane */ = {
 			isa = PBXGroup;
 			children = (
+				465955C5235BC06F002347F9 /* Views */,
 				4659559C235B61D0002347F9 /* Predefined Lanes */,
 				4659557D235B443F002347F9 /* Lane.storyboard */,
 				4659557A235B4427002347F9 /* View Controllers */,
@@ -391,6 +409,7 @@
 			children = (
 				4659557F235B4472002347F9 /* LaneDetailViewController.swift */,
 				46595581235B4493002347F9 /* LaneNavigationViewController.swift */,
+				465955C3235BBBBB002347F9 /* SelectPredefinedLanesTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -400,6 +419,7 @@
 			children = (
 				46595583235B45A3002347F9 /* LaneDetailViewModel.swift */,
 				46595597235B57B8002347F9 /* LaneViewModel.swift */,
+				465955C1235BBA2A002347F9 /* SelectPredefinedLanesTableViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -477,6 +497,42 @@
 				465955B0235BA86D002347F9 /* CoreDataService.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		465955B4235BB1BE002347F9 /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				465955B7235BB1DB002347F9 /* Track.storyboard */,
+				465955B5235BB1C7002347F9 /* View Controllers */,
+				465955B6235BB1CD002347F9 /* View Model */,
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
+		465955B5235BB1C7002347F9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				465955B9235BB226002347F9 /* TrackNavigationViewController.swift */,
+				465955BB235BB253002347F9 /* TrackDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		465955B6235BB1CD002347F9 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				465955BD235BB264002347F9 /* TrackDetailViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		465955C5235BC06F002347F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				465955C6235BC087002347F9 /* SelectPredefinedLaneTableViewCell.swift */,
+				465955C7235BC087002347F9 /* SelectPredefinedLaneTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8CC876DC6CC5DE9C3CBE78E1 /* Frameworks */ = {
@@ -618,7 +674,9 @@
 				46595566235B1493002347F9 /* HomeOptionTableViewCell.xib in Resources */,
 				46595592235B4DAD002347F9 /* TextFieldWithLabel.xib in Resources */,
 				4659550C235AE43D002347F9 /* Assets.xcassets in Resources */,
+				465955C9235BC087002347F9 /* SelectPredefinedLaneTableViewCell.xib in Resources */,
 				46595507235AE43D002347F9 /* Main.storyboard in Resources */,
+				465955B8235BB1DB002347F9 /* Track.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,9 +804,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				465955BA235BB226002347F9 /* TrackNavigationViewController.swift in Sources */,
 				46595504235AE43D002347F9 /* ViewController.swift in Sources */,
 				46595584235B45A3002347F9 /* LaneDetailViewModel.swift in Sources */,
 				46595586235B49FE002347F9 /* UITextField+Designables.swift in Sources */,
+				465955BE235BB264002347F9 /* TrackDetailViewModel.swift in Sources */,
 				465955A3235B620C002347F9 /* TrackKilogramsViewModel.swift in Sources */,
 				46595598235B57B8002347F9 /* LaneViewModel.swift in Sources */,
 				46595582235B4493002347F9 /* LaneNavigationViewController.swift in Sources */,
@@ -761,6 +821,7 @@
 				46595539235AE4F3002347F9 /* PageViewModel.swift in Sources */,
 				4659556C235B2002002347F9 /* String+GetDate.swift in Sources */,
 				4659554A235B0AC7002347F9 /* LengthUnits.swift in Sources */,
+				465955C2235BBA2A002347F9 /* SelectPredefinedLanesTableViewModel.swift in Sources */,
 				46595536235AE4C1002347F9 /* PageViewController.swift in Sources */,
 				4659553E235AE675002347F9 /* Storyboard.swift in Sources */,
 				46595500235AE43C002347F9 /* AppDelegate.swift in Sources */,
@@ -770,8 +831,11 @@
 				46595541235B03F0002347F9 /* Unit.swift in Sources */,
 				46595561235B1473002347F9 /* HomeTrackTableViewCell.swift in Sources */,
 				465955A1235B6200002347F9 /* TrackKilogramsViewController.swift in Sources */,
+				465955C4235BBBBB002347F9 /* SelectPredefinedLanesTableViewController.swift in Sources */,
+				465955BC235BB253002347F9 /* TrackDetailViewController.swift in Sources */,
 				46595502235AE43D002347F9 /* SceneDelegate.swift in Sources */,
 				46595555235B1032002347F9 /* HomeTableViewController.swift in Sources */,
+				465955C8235BC087002347F9 /* SelectPredefinedLaneTableViewCell.swift in Sources */,
 				46595568235B1B96002347F9 /* TimestampModel.swift in Sources */,
 				46595553235B1012002347F9 /* HomeViewModel.swift in Sources */,
 				46595546235B04B2002347F9 /* MassUnits.swift in Sources */,

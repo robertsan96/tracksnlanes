@@ -62,6 +62,34 @@
             </objects>
             <point key="canvasLocation" x="879.71014492753625" y="158.70535714285714"/>
         </scene>
+        <!--Select Predefined Lanes Table View Controller-->
+        <scene sceneID="82r-IN-b0e">
+            <objects>
+                <tableViewController storyboardIdentifier="SelectPredefinedLanesTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e1V-wP-Eb9" customClass="SelectPredefinedLanesTableViewController" customModule="ProjectME" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kus-fE-dUd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Rpp-T0-u8M">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rpp-T0-u8M" id="Bt2-x8-YLR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="e1V-wP-Eb9" id="FJw-cD-Cur"/>
+                            <outlet property="delegate" destination="e1V-wP-Eb9" id="fEO-yF-cjz"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="REv-aF-EFI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1675" y="159"/>
+        </scene>
         <!--Lane Navigation View Controller-->
         <scene sceneID="I3e-Jh-KnU">
             <objects>

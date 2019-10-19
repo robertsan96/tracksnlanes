@@ -16,7 +16,10 @@ class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.clearsSelectionOnViewWillAppear = false
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
+        let createTrackButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onCreateTrack))
+        self.navigationItem.rightBarButtonItem = createTrackButton
         
         title = "Home"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -32,6 +35,15 @@ class HomeTableViewController: UITableViewController {
         super.viewDidAppear(animated)
     }
 
+    @objc func onCreateTrack() {
+        let tracksNVC = try! Storyboard.getVC(with: "TrackNavigationViewController", in: .track) as! TrackNavigationViewController
+        let trackVC = try! Storyboard.getVC(with: "TrackDetailViewController", in: .track) as! TrackDetailViewController
+        let trackVM = TrackDetailViewModel(mode: .create)
+        trackVC.viewModel = trackVM
+        tracksNVC.viewControllers = [trackVC]
+        present(tracksNVC, animated: true, completion: nil)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -87,17 +99,21 @@ class HomeTableViewController: UITableViewController {
         }
     }
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            let model = viewModel.tracks[indexPath.row]
+            CoreDataService.shared.remove(object: model)
+            viewModel.tracks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
