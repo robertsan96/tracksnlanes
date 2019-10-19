@@ -12,6 +12,7 @@ struct Storyboard {
     
     enum Storyboards: String {
         case main = "Main"
+        case lane = "Lane"
     }
     
     enum StoryboardError: Error {

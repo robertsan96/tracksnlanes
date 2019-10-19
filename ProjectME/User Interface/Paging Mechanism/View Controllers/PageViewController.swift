@@ -32,7 +32,12 @@ class PageViewController: UIPageViewController {
     }
     
     @objc func onCreateLane() {
-        print("Lane creation")
+        let laneNVC = try! Storyboard.getVC(with: "LaneNavigationViewController", in: .lane) as! UINavigationController
+        let laneVC = try! Storyboard.getVC(with: "LaneDetailViewController", in: .lane) as! LaneDetailViewController
+        let laneVM = LaneDetailViewModel(track: viewModel.track.value)
+        laneVC.viewModel = laneVM
+        laneNVC.viewControllers = [laneVC]
+        present(laneNVC, animated: true, completion: nil)
     }
 }
 

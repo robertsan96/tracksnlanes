@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lane Detail View Controller-->
+        <scene sceneID="msy-gt-ZDd">
+            <objects>
+                <viewController storyboardIdentifier="LaneDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UHf-29-9hW" customClass="LaneDetailViewController" customModule="ProjectME" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Yl-9U-wB7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7q6-Kx-9Kt" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="q0A-kx-2yy"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeM-Zj-SOi" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="160" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MMo-2E-feC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6K-aa-08B" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="210" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="epM-ot-Lfv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7q6-Kx-9Kt" firstAttribute="top" secondItem="Dim-41-Xxo" secondAttribute="top" constant="50" id="4Ep-km-Smo"/>
+                            <constraint firstItem="AeM-Zj-SOi" firstAttribute="top" secondItem="7q6-Kx-9Kt" secondAttribute="bottom" constant="16" id="Cyc-Mu-F7U"/>
+                            <constraint firstItem="AeM-Zj-SOi" firstAttribute="leading" secondItem="Dim-41-Xxo" secondAttribute="leading" id="JNJ-OQ-MdS"/>
+                            <constraint firstItem="7q6-Kx-9Kt" firstAttribute="leading" secondItem="Dim-41-Xxo" secondAttribute="leading" id="MQn-6t-7cP"/>
+                            <constraint firstItem="AeM-Zj-SOi" firstAttribute="trailing" secondItem="Dim-41-Xxo" secondAttribute="trailing" id="SFd-sI-NEQ"/>
+                            <constraint firstItem="7q6-Kx-9Kt" firstAttribute="trailing" secondItem="Dim-41-Xxo" secondAttribute="trailing" id="ptN-Yb-gV9"/>
+                            <constraint firstItem="s6K-aa-08B" firstAttribute="leading" secondItem="Dim-41-Xxo" secondAttribute="leading" id="ubN-8T-jaa"/>
+                            <constraint firstItem="s6K-aa-08B" firstAttribute="top" secondItem="AeM-Zj-SOi" secondAttribute="bottom" id="urR-0t-OSS"/>
+                            <constraint firstItem="s6K-aa-08B" firstAttribute="trailing" secondItem="Dim-41-Xxo" secondAttribute="trailing" id="ypS-UX-f6J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dim-41-Xxo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="s24-52-BKw"/>
+                    <connections>
+                        <outlet property="laneNameTextFieldWithLabel" destination="7q6-Kx-9Kt" id="U1G-jf-acm"/>
+                        <outlet property="laneUnitTextFieldWithLabel" destination="s6K-aa-08B" id="StB-lO-fqJ"/>
+                        <outlet property="laneUnitsTextFieldWithLabel" destination="AeM-Zj-SOi" id="0SA-HI-qNU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uB3-de-Gux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879.71014492753625" y="158.70535714285714"/>
+        </scene>
+        <!--Lane Navigation View Controller-->
+        <scene sceneID="I3e-Jh-KnU">
+            <objects>
+                <navigationController storyboardIdentifier="LaneNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ad3-H4-opB" customClass="LaneNavigationViewController" customModule="ProjectME" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4k9-m2-Fez">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l13-7f-oqZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="159.375"/>
+        </scene>
+    </scenes>
+</document>
