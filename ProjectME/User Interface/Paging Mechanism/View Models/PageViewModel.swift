@@ -29,15 +29,19 @@ class PageViewModel {
     }
         
     func processLanes() {
-        if track.value.lanes.count == 0 {
-            let noLanesVC = try! Storyboard.getVC(with: "NoLanesViewController")
-            viewControllers.append(noLanesVC)
-            vcState.accept(.noLanes)
-        } else {
-            // only set the first vc.
-            let vc = try! Storyboard.getVC(with: "ViewController")
-            viewControllers.append(vc)
-            vcState.accept(.idle)
-        }
+//        if track.value.lanes.count == 0 {
+//            let noLanesVC = try! Storyboard.getVC(with: "NoLanesViewController")
+//            viewControllers.append(noLanesVC)
+//            vcState.accept(.noLanes)
+//        } else {
+//            // only set the first vc.
+//            let vc = try! Storyboard.getVC(with: "ViewController")
+//            viewControllers.append(vc)
+//            vcState.accept(.idle)
+//        }
+
+        let noLanesVC = try! Storyboard.getVC(with: "NoLanesViewController")
+        viewControllers.append(noLanesVC)
+        vcState.accept(.noLanes)
     }
 }

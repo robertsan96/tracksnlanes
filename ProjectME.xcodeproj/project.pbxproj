@@ -26,8 +26,6 @@
 		4659554A235B0AC7002347F9 /* LengthUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595549235B0AC7002347F9 /* LengthUnits.swift */; };
 		46595553235B1012002347F9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595552235B1012002347F9 /* HomeViewModel.swift */; };
 		46595555235B1032002347F9 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595554235B1032002347F9 /* HomeTableViewController.swift */; };
-		46595557235B11F9002347F9 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595556235B11F9002347F9 /* TrackModel.swift */; };
-		46595559235B125B002347F9 /* LaneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595558235B125B002347F9 /* LaneModel.swift */; };
 		46595561235B1473002347F9 /* HomeTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659555F235B1473002347F9 /* HomeTrackTableViewCell.swift */; };
 		46595562235B1473002347F9 /* HomeTrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46595560235B1473002347F9 /* HomeTrackTableViewCell.xib */; };
 		46595565235B1493002347F9 /* HomeOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595563235B1493002347F9 /* HomeOptionTableViewCell.swift */; };
@@ -50,6 +48,8 @@
 		465955A3235B620C002347F9 /* TrackKilogramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955A2235B620C002347F9 /* TrackKilogramsViewModel.swift */; };
 		465955A5235B6219002347F9 /* PredefinedLanes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 465955A4235B6219002347F9 /* PredefinedLanes.storyboard */; };
 		465955A8235B649D002347F9 /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955A7235B649D002347F9 /* ResourceType.swift */; };
+		465955B1235BA86D002347F9 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955B0235BA86D002347F9 /* CoreDataService.swift */; };
+		465955B3235BAB72002347F9 /* NSManagedObject+EntityName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955B2235BAB72002347F9 /* NSManagedObject+EntityName.swift */; };
 		837E060A47F4680C4650E36D /* Pods_ProjectME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27E882DD62CCF72C9BF5A97 /* Pods_ProjectME.framework */; };
 		F2464BC15FE2876DF5DC3794 /* Pods_ProjectMETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5A56FF1D30379FC55F4B2F /* Pods_ProjectMETests.framework */; };
 /* End PBXBuildFile section */
@@ -98,8 +98,6 @@
 		46595549235B0AC7002347F9 /* LengthUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthUnits.swift; sourceTree = "<group>"; };
 		46595552235B1012002347F9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		46595554235B1032002347F9 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
-		46595556235B11F9002347F9 /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
-		46595558235B125B002347F9 /* LaneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneModel.swift; sourceTree = "<group>"; };
 		4659555F235B1473002347F9 /* HomeTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTrackTableViewCell.swift; sourceTree = "<group>"; };
 		46595560235B1473002347F9 /* HomeTrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTrackTableViewCell.xib; sourceTree = "<group>"; };
 		46595563235B1493002347F9 /* HomeOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -122,6 +120,8 @@
 		465955A2235B620C002347F9 /* TrackKilogramsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackKilogramsViewModel.swift; sourceTree = "<group>"; };
 		465955A4235B6219002347F9 /* PredefinedLanes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PredefinedLanes.storyboard; sourceTree = "<group>"; };
 		465955A7235B649D002347F9 /* ResourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceType.swift; sourceTree = "<group>"; };
+		465955B0235BA86D002347F9 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		465955B2235BAB72002347F9 /* NSManagedObject+EntityName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+EntityName.swift"; sourceTree = "<group>"; };
 		6C1C191FC7D6CC629B51B838 /* Pods-ProjectME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.release.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.release.xcconfig"; sourceTree = "<group>"; };
 		958B0C7BCEE1C29C7E5C4216 /* Pods-ProjectMETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMETests.release.xcconfig"; path = "Target Support Files/Pods-ProjectMETests/Pods-ProjectMETests.release.xcconfig"; sourceTree = "<group>"; };
 		BE39A6C3F23B42A4E9A3B4A4 /* Pods-ProjectME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.debug.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.debug.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +256,7 @@
 		4659553A235AE654002347F9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				465955AD235BA80E002347F9 /* Services */,
 				465955A6235B6495002347F9 /* Resource Types */,
 				4659553B235AE65A002347F9 /* Extensions */,
 				4659553F235B03DD002347F9 /* Model */,
@@ -272,6 +273,7 @@
 				4659556B235B2002002347F9 /* String+GetDate.swift */,
 				4659556D235B24BD002347F9 /* Date+CurrentDate.swift */,
 				46595585235B49FE002347F9 /* UITextField+Designables.swift */,
+				465955B2235BAB72002347F9 /* NSManagedObject+EntityName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -287,8 +289,6 @@
 		4659553F235B03DD002347F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				46595556235B11F9002347F9 /* TrackModel.swift */,
-				46595558235B125B002347F9 /* LaneModel.swift */,
 				46595567235B1B96002347F9 /* TimestampModel.swift */,
 			);
 			path = Model;
@@ -461,6 +461,22 @@
 				465955A7235B649D002347F9 /* ResourceType.swift */,
 			);
 			path = "Resource Types";
+			sourceTree = "<group>";
+		};
+		465955AD235BA80E002347F9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				465955AE235BA812002347F9 /* CoreData */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		465955AE235BA812002347F9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				465955B0235BA86D002347F9 /* CoreDataService.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		8CC876DC6CC5DE9C3CBE78E1 /* Frameworks */ = {
@@ -740,7 +756,6 @@
 				46595573235B2AFD002347F9 /* HomeOptionModel.swift in Sources */,
 				46595580235B4472002347F9 /* LaneDetailViewController.swift in Sources */,
 				46595565235B1493002347F9 /* HomeOptionTableViewCell.swift in Sources */,
-				46595559235B125B002347F9 /* LaneModel.swift in Sources */,
 				465955A8235B649D002347F9 /* ResourceType.swift in Sources */,
 				4659556E235B24BD002347F9 /* Date+CurrentDate.swift in Sources */,
 				46595539235AE4F3002347F9 /* PageViewModel.swift in Sources */,
@@ -749,6 +764,8 @@
 				46595536235AE4C1002347F9 /* PageViewController.swift in Sources */,
 				4659553E235AE675002347F9 /* Storyboard.swift in Sources */,
 				46595500235AE43C002347F9 /* AppDelegate.swift in Sources */,
+				465955B3235BAB72002347F9 /* NSManagedObject+EntityName.swift in Sources */,
+				465955B1235BA86D002347F9 /* CoreDataService.swift in Sources */,
 				4659558E235B4B27002347F9 /* TextFieldWithLabel.swift in Sources */,
 				46595541235B03F0002347F9 /* Unit.swift in Sources */,
 				46595561235B1473002347F9 /* HomeTrackTableViewCell.swift in Sources */,
@@ -756,7 +773,6 @@
 				46595502235AE43D002347F9 /* SceneDelegate.swift in Sources */,
 				46595555235B1032002347F9 /* HomeTableViewController.swift in Sources */,
 				46595568235B1B96002347F9 /* TimestampModel.swift in Sources */,
-				46595557235B11F9002347F9 /* TrackModel.swift in Sources */,
 				46595553235B1012002347F9 /* HomeViewModel.swift in Sources */,
 				46595546235B04B2002347F9 /* MassUnits.swift in Sources */,
 				4659556A235B1C60002347F9 /* Date+ElapsedTime.swift in Sources */,

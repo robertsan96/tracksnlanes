@@ -18,24 +18,14 @@ class HomeViewModel {
     var options: [HomeOptionModel] = []
     
     init() {
-        tracks = [
-            TrackModel(name: "Weight Loss", lanes: [
-                LaneModel(name: "Kilograms"),
-                LaneModel(name: "Arm Size"),
-                LaneModel(name: "Belly Size"),
-                LaneModel(name: "Leg Size"),
-                LaneModel(name: "Seat Size"),
-                LaneModel(name: "Jogging Lane")
-            ], timestamp: TimestampModel(createdAt: "2015-04-01T11:42:00".getDate()!)),
-            TrackModel(name: "Liquids", lanes: [
-                LaneModel(name: "Periodic Kilometers"),
-                LaneModel(name: "Oil Change Intervals"),
-                LaneModel(name: "Brake Updates"),
-                LaneModel(name: "Service Intervals")
-            ], timestamp: TimestampModel(createdAt: "2019-10-19T14:23:10".getDate()!)),
-            TrackModel(name: "Rent", lanes: [])
-        ]
+        tracks = CoreDataService.shared.get()
         
+        
+        let track = TrackModel(context: CoreDataService.shared.context)
+//        track.name = "Weight Loss"
+//        track.createdAt = Date.getDateInTimezone()
+//        track.updatedAt = Date.getDateInTimezone()
+//        try! CoreDataService.shared.context.save()
         options = [
             HomeOptionModel(name: "Settings", icon: "👨🏻‍🔧"),
             HomeOptionModel(name: "Profile", icon: "😎"),

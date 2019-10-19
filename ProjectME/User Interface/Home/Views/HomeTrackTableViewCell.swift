@@ -28,7 +28,7 @@ class HomeTrackTableViewCell: UITableViewCell {
     
     func load(track: TrackModel) {
         textLabel?.text = track.name
-        detailTextLabel?.text = track.timestamp.createdAt.elapsedTime()
+        detailTextLabel?.text = track.createdAt?.elapsedTime()
         
         detailTextLabel?.textColor = UIColor.systemGray
     }
