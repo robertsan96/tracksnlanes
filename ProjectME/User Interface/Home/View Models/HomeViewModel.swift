@@ -20,12 +20,6 @@ class HomeViewModel {
     init() {
         tracks = CoreDataService.shared.get()
         
-        
-        let track = TrackModel(context: CoreDataService.shared.context)
-//        track.name = "Weight Loss"
-//        track.createdAt = Date.getDateInTimezone()
-//        track.updatedAt = Date.getDateInTimezone()
-//        try! CoreDataService.shared.context.save()
         options = [
             HomeOptionModel(name: "Settings", icon: "👨🏻‍🔧"),
             HomeOptionModel(name: "Profile", icon: "😎"),

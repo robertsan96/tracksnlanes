@@ -4,13 +4,13 @@
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TrackModel" inverseName="relationship" inverseEntity="TrackModel"/>
+        <relationship name="track" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TrackModel" inverseName="lanes" inverseEntity="TrackModel"/>
     </entity>
     <entity name="TrackModel" representedClassName="TrackModel" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LaneModel" inverseName="relationship" inverseEntity="LaneModel" spotlightIndexingEnabled="YES"/>
+        <relationship name="lanes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LaneModel" inverseName="track" inverseEntity="LaneModel" spotlightIndexingEnabled="YES"/>
     </entity>
     <elements>
         <element name="TrackModel" positionX="-63" positionY="-18" width="128" height="103"/>
