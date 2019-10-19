@@ -11,28 +11,35 @@ import Foundation
 class HomeViewModel {
     
     enum TableSections: Int {
-        case tracks = 1, options
+        case tracks = 0, options
     }
     
     var tracks: [TrackModel] = []
-    var options: [String] = []
+    var options: [HomeOptionModel] = []
     
     init() {
         tracks = [
-            TrackModel(name: "My Weight Loss Tracker", lanes: [
+            TrackModel(name: "🏃🏻‍♀️ My Weight Loss Tracker and a much longer path", lanes: [
                 LaneModel(name: "Kilograms"),
                 LaneModel(name: "Arm Size"),
                 LaneModel(name: "Belly Size"),
                 LaneModel(name: "Leg Size"),
                 LaneModel(name: "Seat Size"),
                 LaneModel(name: "Jogging Lane")
-            ]),
-            TrackModel(name: "My Car Tracker", lanes: [
+            ], timestamp: TimestampModel(createdAt: "2015-04-01T11:42:00".getDate()!)),
+            TrackModel(name: "🚘 My Car Tracker", lanes: [
                 LaneModel(name: "Periodic Kilometers"),
                 LaneModel(name: "Oil Change Intervals"),
                 LaneModel(name: "Brake Updates"),
                 LaneModel(name: "Service Intervals")
-            ])
+            ], timestamp: TimestampModel(createdAt: "2019-10-19T14:23:10".getDate()!))
+        ]
+        
+        options = [
+            HomeOptionModel(name: "Settings", icon: "👨🏻‍🔧"),
+            HomeOptionModel(name: "Profile", icon: "😎"),
+            HomeOptionModel(name: "Purchases", icon: "💰"),
+            HomeOptionModel(name: "Market", icon: "💹")
         ]
     }
 }

@@ -23,6 +23,8 @@ class HomeTableViewController: UITableViewController {
         
         tableView.register(HomeTrackTableViewCell.self, forCellReuseIdentifier: "HomeTrackTableViewCell")
         tableView.register(HomeOptionTableViewCell.self, forCellReuseIdentifier: "HomeOptionTableViewCell")
+        
+        view.backgroundColor = UIColor.systemGroupedBackground
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,24 +46,26 @@ class HomeTableViewController: UITableViewController {
         
         switch indexPath.section {
         case HomeViewModel.TableSections.tracks.rawValue:
-            
-            return tableView.dequeueReusableCell(withIdentifier: "HomeTrackTableViewCell") as! HomeTrackTableViewCell
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTrackTableViewCell", for: indexPath) as! HomeTrackTableViewCell
+            cell.load(track: viewModel.tracks[indexPath.row])
+            return cell
         case HomeViewModel.TableSections.options.rawValue:
-            
-            return tableView.dequeueReusableCell(withIdentifier: "HomeOptionTableViewCell") as! HomeOptionTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeOptionTableViewCell", for: indexPath) as! HomeOptionTableViewCell
+            cell.load(option: viewModel.options[indexPath.row])
+            return cell
             
         default: return UITableViewCell()
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 0, height: 50)))
     }
-    */
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        return (indexPath.section == HomeViewModel.TableSections.tracks.rawValue)
+    }
 
     /*
     // Override to support editing the table view.
@@ -71,7 +75,7 @@ class HomeTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

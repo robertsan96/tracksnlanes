@@ -13,8 +13,15 @@ class TrackModel {
     var name: String
     var lanes: [LaneModel]
     
-    init(name: String, lanes: [LaneModel]) {
+    var timestamp: TimestampModel
+    
+    init(name: String, lanes: [LaneModel], timestamp: TimestampModel? = nil) {
         self.name = name
         self.lanes = lanes
+        if timestamp == nil {
+            self.timestamp = TimestampModel(createdAt: Date())
+        } else {
+            self.timestamp = timestamp!
+        }
     }
 }
