@@ -28,3 +28,10 @@ enum Milimeter: Unit {
         return 0.001
     }
 }
+
+enum Kilometer: Unit {
+    
+    static var conversionFactor: Double {
+        return 1000
+    }
+}

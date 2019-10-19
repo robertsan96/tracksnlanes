@@ -23,6 +23,14 @@
 		46595546235B04B2002347F9 /* MassUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595545235B04B2002347F9 /* MassUnits.swift */; };
 		46595548235B092C002347F9 /* TimeUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595547235B092C002347F9 /* TimeUnits.swift */; };
 		4659554A235B0AC7002347F9 /* LengthUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595549235B0AC7002347F9 /* LengthUnits.swift */; };
+		46595553235B1012002347F9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595552235B1012002347F9 /* HomeViewModel.swift */; };
+		46595555235B1032002347F9 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595554235B1032002347F9 /* HomeTableViewController.swift */; };
+		46595557235B11F9002347F9 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595556235B11F9002347F9 /* TrackModel.swift */; };
+		46595559235B125B002347F9 /* LaneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595558235B125B002347F9 /* LaneModel.swift */; };
+		46595561235B1473002347F9 /* HomeTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659555F235B1473002347F9 /* HomeTrackTableViewCell.swift */; };
+		46595562235B1473002347F9 /* HomeTrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46595560235B1473002347F9 /* HomeTrackTableViewCell.xib */; };
+		46595565235B1493002347F9 /* HomeOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595563235B1493002347F9 /* HomeOptionTableViewCell.swift */; };
+		46595566235B1493002347F9 /* HomeOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46595564235B1493002347F9 /* HomeOptionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +73,14 @@
 		46595545235B04B2002347F9 /* MassUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassUnits.swift; sourceTree = "<group>"; };
 		46595547235B092C002347F9 /* TimeUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnits.swift; sourceTree = "<group>"; };
 		46595549235B0AC7002347F9 /* LengthUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthUnits.swift; sourceTree = "<group>"; };
+		46595552235B1012002347F9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		46595554235B1032002347F9 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		46595556235B11F9002347F9 /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
+		46595558235B125B002347F9 /* LaneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneModel.swift; sourceTree = "<group>"; };
+		4659555F235B1473002347F9 /* HomeTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTrackTableViewCell.swift; sourceTree = "<group>"; };
+		46595560235B1473002347F9 /* HomeTrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTrackTableViewCell.xib; sourceTree = "<group>"; };
+		46595563235B1493002347F9 /* HomeOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOptionTableViewCell.swift; sourceTree = "<group>"; };
+		46595564235B1493002347F9 /* HomeOptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeOptionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,12 +131,10 @@
 		465954FE235AE43C002347F9 /* ProjectME */ = {
 			isa = PBXGroup;
 			children = (
-				4659553A235AE654002347F9 /* Core */,
 				465954FF235AE43C002347F9 /* AppDelegate.swift */,
 				4659550B235AE43D002347F9 /* Assets.xcassets */,
+				4659553A235AE654002347F9 /* Core */,
 				46595510235AE43D002347F9 /* Info.plist */,
-				4659550D235AE43D002347F9 /* LaunchScreen.storyboard */,
-				46595505235AE43D002347F9 /* Main.storyboard */,
 				46595508235AE43D002347F9 /* ProjectME.xcdatamodeld */,
 				46595501235AE43D002347F9 /* SceneDelegate.swift */,
 				46595532235AE48F002347F9 /* User Interface */,
@@ -150,6 +164,9 @@
 		46595532235AE48F002347F9 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				4659554B235B0E3B002347F9 /* Home */,
+				4659550D235AE43D002347F9 /* LaunchScreen.storyboard */,
+				46595505235AE43D002347F9 /* Main.storyboard */,
 				46595533235AE49E002347F9 /* Paging Mechanism */,
 			);
 			path = "User Interface";
@@ -183,10 +200,10 @@
 		4659553A235AE654002347F9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				46595544235B04A3002347F9 /* Units */,
+				4659553B235AE65A002347F9 /* Extensions */,
 				4659553F235B03DD002347F9 /* Model */,
 				4659553C235AE66C002347F9 /* Storyboard */,
-				4659553B235AE65A002347F9 /* Extensions */,
+				46595544235B04A3002347F9 /* Units */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -209,6 +226,8 @@
 		4659553F235B03DD002347F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				46595556235B11F9002347F9 /* TrackModel.swift */,
+				46595558235B125B002347F9 /* LaneModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +241,43 @@
 				46595549235B0AC7002347F9 /* LengthUnits.swift */,
 			);
 			path = Units;
+			sourceTree = "<group>";
+		};
+		4659554B235B0E3B002347F9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4659555A235B144B002347F9 /* Views */,
+				4659554E235B0E4F002347F9 /* View Controllers */,
+				4659554F235B0E54002347F9 /* View Models */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4659554E235B0E4F002347F9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				46595554235B1032002347F9 /* HomeTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4659554F235B0E54002347F9 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				46595552235B1012002347F9 /* HomeViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		4659555A235B144B002347F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4659555F235B1473002347F9 /* HomeTrackTableViewCell.swift */,
+				46595560235B1473002347F9 /* HomeTrackTableViewCell.xib */,
+				46595563235B1493002347F9 /* HomeOptionTableViewCell.swift */,
+				46595564235B1493002347F9 /* HomeOptionTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,7 +384,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46595562235B1473002347F9 /* HomeTrackTableViewCell.xib in Resources */,
 				4659550F235AE43D002347F9 /* LaunchScreen.storyboard in Resources */,
+				46595566235B1493002347F9 /* HomeOptionTableViewCell.xib in Resources */,
 				4659550C235AE43D002347F9 /* Assets.xcassets in Resources */,
 				46595507235AE43D002347F9 /* Main.storyboard in Resources */,
 			);
@@ -356,13 +414,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				46595504235AE43D002347F9 /* ViewController.swift in Sources */,
+				46595565235B1493002347F9 /* HomeOptionTableViewCell.swift in Sources */,
+				46595559235B125B002347F9 /* LaneModel.swift in Sources */,
 				46595539235AE4F3002347F9 /* PageViewModel.swift in Sources */,
 				4659554A235B0AC7002347F9 /* LengthUnits.swift in Sources */,
 				46595536235AE4C1002347F9 /* PageViewController.swift in Sources */,
 				4659553E235AE675002347F9 /* Storyboard.swift in Sources */,
 				46595500235AE43C002347F9 /* AppDelegate.swift in Sources */,
 				46595541235B03F0002347F9 /* Unit.swift in Sources */,
+				46595561235B1473002347F9 /* HomeTrackTableViewCell.swift in Sources */,
 				46595502235AE43D002347F9 /* SceneDelegate.swift in Sources */,
+				46595555235B1032002347F9 /* HomeTableViewController.swift in Sources */,
+				46595557235B11F9002347F9 /* TrackModel.swift in Sources */,
+				46595553235B1012002347F9 /* HomeViewModel.swift in Sources */,
 				46595546235B04B2002347F9 /* MassUnits.swift in Sources */,
 				46595548235B092C002347F9 /* TimeUnits.swift in Sources */,
 				4659550A235AE43D002347F9 /* ProjectME.xcdatamodeld in Sources */,
