@@ -1,5 +1,5 @@
 //
-//  LaneModel.swift
+//  LaneViewModel.swift
 //  ProjectME
 //
 //  Created by Robert Sandru on 10/19/19.
@@ -8,13 +8,11 @@
 
 import Foundation
 
-class LaneModel {
+class LaneViewModel<T: Unit> {
     
-    var name: String
     var type: ResourceType
     
-    init(name: String, type: ResourceType = .predefined) {
-        self.name = name
+    init(type: ResourceType) {
         self.type = type
     }
 }

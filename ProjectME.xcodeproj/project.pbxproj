@@ -45,6 +45,11 @@
 		46595586235B49FE002347F9 /* UITextField+Designables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595585235B49FE002347F9 /* UITextField+Designables.swift */; };
 		4659558E235B4B27002347F9 /* TextFieldWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659558D235B4B27002347F9 /* TextFieldWithLabel.swift */; };
 		46595592235B4DAD002347F9 /* TextFieldWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46595591235B4DAD002347F9 /* TextFieldWithLabel.xib */; };
+		46595598235B57B8002347F9 /* LaneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595597235B57B8002347F9 /* LaneViewModel.swift */; };
+		465955A1235B6200002347F9 /* TrackKilogramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955A0235B6200002347F9 /* TrackKilogramsViewController.swift */; };
+		465955A3235B620C002347F9 /* TrackKilogramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955A2235B620C002347F9 /* TrackKilogramsViewModel.swift */; };
+		465955A5235B6219002347F9 /* PredefinedLanes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 465955A4235B6219002347F9 /* PredefinedLanes.storyboard */; };
+		465955A8235B649D002347F9 /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955A7235B649D002347F9 /* ResourceType.swift */; };
 		837E060A47F4680C4650E36D /* Pods_ProjectME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27E882DD62CCF72C9BF5A97 /* Pods_ProjectME.framework */; };
 		F2464BC15FE2876DF5DC3794 /* Pods_ProjectMETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5A56FF1D30379FC55F4B2F /* Pods_ProjectMETests.framework */; };
 /* End PBXBuildFile section */
@@ -112,6 +117,11 @@
 		46595585235B49FE002347F9 /* UITextField+Designables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Designables.swift"; sourceTree = "<group>"; };
 		4659558D235B4B27002347F9 /* TextFieldWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithLabel.swift; sourceTree = "<group>"; };
 		46595591235B4DAD002347F9 /* TextFieldWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldWithLabel.xib; sourceTree = "<group>"; };
+		46595597235B57B8002347F9 /* LaneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneViewModel.swift; sourceTree = "<group>"; };
+		465955A0235B6200002347F9 /* TrackKilogramsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackKilogramsViewController.swift; sourceTree = "<group>"; };
+		465955A2235B620C002347F9 /* TrackKilogramsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackKilogramsViewModel.swift; sourceTree = "<group>"; };
+		465955A4235B6219002347F9 /* PredefinedLanes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PredefinedLanes.storyboard; sourceTree = "<group>"; };
+		465955A7235B649D002347F9 /* ResourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceType.swift; sourceTree = "<group>"; };
 		6C1C191FC7D6CC629B51B838 /* Pods-ProjectME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.release.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.release.xcconfig"; sourceTree = "<group>"; };
 		958B0C7BCEE1C29C7E5C4216 /* Pods-ProjectMETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMETests.release.xcconfig"; path = "Target Support Files/Pods-ProjectMETests/Pods-ProjectMETests.release.xcconfig"; sourceTree = "<group>"; };
 		BE39A6C3F23B42A4E9A3B4A4 /* Pods-ProjectME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.debug.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.debug.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +256,7 @@
 		4659553A235AE654002347F9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				465955A6235B6495002347F9 /* Resource Types */,
 				4659553B235AE65A002347F9 /* Extensions */,
 				4659553F235B03DD002347F9 /* Model */,
 				4659553C235AE66C002347F9 /* Storyboard */,
@@ -367,6 +378,7 @@
 		46595579235B4419002347F9 /* Lane */ = {
 			isa = PBXGroup;
 			children = (
+				4659559C235B61D0002347F9 /* Predefined Lanes */,
 				4659557D235B443F002347F9 /* Lane.storyboard */,
 				4659557A235B4427002347F9 /* View Controllers */,
 				4659557C235B4430002347F9 /* View Models */,
@@ -387,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				46595583235B45A3002347F9 /* LaneDetailViewModel.swift */,
+				46595597235B57B8002347F9 /* LaneViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -406,6 +419,48 @@
 				4659558D235B4B27002347F9 /* TextFieldWithLabel.swift */,
 			);
 			path = "Textfield with Label";
+			sourceTree = "<group>";
+		};
+		4659559C235B61D0002347F9 /* Predefined Lanes */ = {
+			isa = PBXGroup;
+			children = (
+				465955A4235B6219002347F9 /* PredefinedLanes.storyboard */,
+				4659559D235B61D7002347F9 /* TrackKilogramsLane */,
+			);
+			path = "Predefined Lanes";
+			sourceTree = "<group>";
+		};
+		4659559D235B61D7002347F9 /* TrackKilogramsLane */ = {
+			isa = PBXGroup;
+			children = (
+				4659559F235B61EF002347F9 /* View Models */,
+				4659559E235B61E5002347F9 /* View Controllers */,
+			);
+			path = TrackKilogramsLane;
+			sourceTree = "<group>";
+		};
+		4659559E235B61E5002347F9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				465955A0235B6200002347F9 /* TrackKilogramsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4659559F235B61EF002347F9 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				465955A2235B620C002347F9 /* TrackKilogramsViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		465955A6235B6495002347F9 /* Resource Types */ = {
+			isa = PBXGroup;
+			children = (
+				465955A7235B649D002347F9 /* ResourceType.swift */,
+			);
+			path = "Resource Types";
 			sourceTree = "<group>";
 		};
 		8CC876DC6CC5DE9C3CBE78E1 /* Frameworks */ = {
@@ -542,6 +597,7 @@
 			files = (
 				46595562235B1473002347F9 /* HomeTrackTableViewCell.xib in Resources */,
 				4659550F235AE43D002347F9 /* LaunchScreen.storyboard in Resources */,
+				465955A5235B6219002347F9 /* PredefinedLanes.storyboard in Resources */,
 				4659557E235B443F002347F9 /* Lane.storyboard in Resources */,
 				46595566235B1493002347F9 /* HomeOptionTableViewCell.xib in Resources */,
 				46595592235B4DAD002347F9 /* TextFieldWithLabel.xib in Resources */,
@@ -677,12 +733,15 @@
 				46595504235AE43D002347F9 /* ViewController.swift in Sources */,
 				46595584235B45A3002347F9 /* LaneDetailViewModel.swift in Sources */,
 				46595586235B49FE002347F9 /* UITextField+Designables.swift in Sources */,
+				465955A3235B620C002347F9 /* TrackKilogramsViewModel.swift in Sources */,
+				46595598235B57B8002347F9 /* LaneViewModel.swift in Sources */,
 				46595582235B4493002347F9 /* LaneNavigationViewController.swift in Sources */,
 				46595578235B3FA2002347F9 /* NoLanesViewController.swift in Sources */,
 				46595573235B2AFD002347F9 /* HomeOptionModel.swift in Sources */,
 				46595580235B4472002347F9 /* LaneDetailViewController.swift in Sources */,
 				46595565235B1493002347F9 /* HomeOptionTableViewCell.swift in Sources */,
 				46595559235B125B002347F9 /* LaneModel.swift in Sources */,
+				465955A8235B649D002347F9 /* ResourceType.swift in Sources */,
 				4659556E235B24BD002347F9 /* Date+CurrentDate.swift in Sources */,
 				46595539235AE4F3002347F9 /* PageViewModel.swift in Sources */,
 				4659556C235B2002002347F9 /* String+GetDate.swift in Sources */,
@@ -693,6 +752,7 @@
 				4659558E235B4B27002347F9 /* TextFieldWithLabel.swift in Sources */,
 				46595541235B03F0002347F9 /* Unit.swift in Sources */,
 				46595561235B1473002347F9 /* HomeTrackTableViewCell.swift in Sources */,
+				465955A1235B6200002347F9 /* TrackKilogramsViewController.swift in Sources */,
 				46595502235AE43D002347F9 /* SceneDelegate.swift in Sources */,
 				46595555235B1032002347F9 /* HomeTableViewController.swift in Sources */,
 				46595568235B1B96002347F9 /* TimestampModel.swift in Sources */,

@@ -13,3 +13,24 @@ protocol Unit {
 }
 
 extension Unit { }
+
+class UnitSystem<T: Unit>: Hashable {
+    
+    var value: Double
+    
+    init(value: Double) {
+        self.value = value
+    }
+    
+    static func +(lhs: UnitSystem<T>, rhs: UnitSystem<T>) -> UnitSystem<T> {
+        return UnitSystem<T>(value: lhs.value + rhs.value)
+    }
+    
+    static func == (lhs: UnitSystem<T>, rhs: UnitSystem<T>) -> Bool {
+        return lhs.value == rhs.value
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(value)
+    }
+}

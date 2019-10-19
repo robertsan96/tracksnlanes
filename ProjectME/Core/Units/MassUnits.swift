@@ -28,16 +28,3 @@ enum Gram: Unit {
         return 0.001
     }
 }
-
-struct MassUnit<T: Unit>: Hashable {
-    
-    let mass: Double
-
-    init(mass: Double) {
-        self.mass = mass
-    }
-    
-    static func +(lhs: MassUnit<T>, rhs: MassUnit<T>) -> MassUnit<T> {
-        return MassUnit<T>(mass: lhs.mass + rhs.mass)
-    }
-}

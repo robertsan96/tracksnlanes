@@ -28,16 +28,3 @@ enum Hour: Unit {
         return 3600
     }
 }
-
-struct TimeUnit<T: Unit>: Hashable {
-    
-    var duration: Double
-    
-    init(duration: Double) {
-        self.duration = duration
-    }
-    
-    static func +(lhs: TimeUnit<T>, rhs: TimeUnit<T>) -> TimeUnit<T> {
-        return TimeUnit<T>(duration: lhs.duration + rhs.duration)
-    }
-}
