@@ -23,8 +23,9 @@ class HomeTableViewController: UITableViewController {
         
         tableView.register(HomeTrackTableViewCell.self, forCellReuseIdentifier: "HomeTrackTableViewCell")
         tableView.register(HomeOptionTableViewCell.self, forCellReuseIdentifier: "HomeOptionTableViewCell")
+        tableView.tableFooterView = UIView()
         
-        view.backgroundColor = UIColor.systemGroupedBackground
+        view.backgroundColor = UIColor.systemBackground
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
