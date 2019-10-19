@@ -19,7 +19,7 @@ class HomeViewModel {
     
     init() {
         tracks = [
-            TrackModel(name: "🏃🏻‍♀️ My Weight Loss Tracker and a much longer path", lanes: [
+            TrackModel(name: "Weight Loss", lanes: [
                 LaneModel(name: "Kilograms"),
                 LaneModel(name: "Arm Size"),
                 LaneModel(name: "Belly Size"),
@@ -27,12 +27,13 @@ class HomeViewModel {
                 LaneModel(name: "Seat Size"),
                 LaneModel(name: "Jogging Lane")
             ], timestamp: TimestampModel(createdAt: "2015-04-01T11:42:00".getDate()!)),
-            TrackModel(name: "🚘 My Car Tracker", lanes: [
+            TrackModel(name: "Liquids", lanes: [
                 LaneModel(name: "Periodic Kilometers"),
                 LaneModel(name: "Oil Change Intervals"),
                 LaneModel(name: "Brake Updates"),
                 LaneModel(name: "Service Intervals")
-            ], timestamp: TimestampModel(createdAt: "2019-10-19T14:23:10".getDate()!))
+            ], timestamp: TimestampModel(createdAt: "2019-10-19T14:23:10".getDate()!)),
+            TrackModel(name: "Rent", lanes: [])
         ]
         
         options = [

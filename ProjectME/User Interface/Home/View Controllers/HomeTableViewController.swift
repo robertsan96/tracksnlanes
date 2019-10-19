@@ -27,6 +27,10 @@ class HomeTableViewController: UITableViewController {
         
         view.backgroundColor = UIColor.systemBackground
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -66,6 +70,21 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         
         return (indexPath.section == HomeViewModel.TableSections.tracks.rawValue)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case HomeViewModel.TableSections.tracks.rawValue:
+            let model = viewModel.tracks[indexPath.row]
+            let pageVC = try! Storyboard.getVC(with: "PageViewController") as! PageViewController
+            let pageVM = PageViewModel(track: model)
+            pageVC.viewModel = pageVM
+            navigationController?.pushViewController(pageVC, animated: true)
+        case HomeViewModel.TableSections.options.rawValue:
+            let model = viewModel.options[indexPath.row]
+            print(model.name)
+        default: break
+        }
     }
 
     /*

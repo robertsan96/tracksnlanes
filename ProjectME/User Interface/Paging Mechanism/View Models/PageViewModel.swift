@@ -7,10 +7,37 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PageViewModel {
     
-    var viewControllers = [
-        try! Storyboard.getVC(with: "ViewController")
-    ]
+    enum State {
+        case idle
+        case noLanes
+    }
+    
+    var viewControllers: [UIViewController] = []
+    var track: BehaviorRelay<TrackModel>
+    var vcState: BehaviorRelay<State> = BehaviorRelay(value: .idle)
+    var disposeBag: DisposeBag = DisposeBag()
+    
+    init(track: TrackModel) {
+        self.track = BehaviorRelay(value: track)
+        
+        processLanes()
+    }
+        
+    func processLanes() {
+        if track.value.lanes.count == 0 {
+            let noLanesVC = try! Storyboard.getVC(with: "NoLanesViewController")
+            viewControllers.append(noLanesVC)
+            vcState.accept(.noLanes)
+        } else {
+            // only set the first vc.
+            let vc = try! Storyboard.getVC(with: "ViewController")
+            viewControllers.append(vc)
+            vcState.accept(.idle)
+        }
+    }
 }

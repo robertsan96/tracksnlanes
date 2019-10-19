@@ -13,7 +13,7 @@ class TimestampModel {
     var createdAt: Date
     var updatedAt: Date?
     
-    init(createdAt: Date, updatedAt: Date = Date()) {
+    init(createdAt: Date, updatedAt: Date = Date.getDateInTimezone()) {
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
