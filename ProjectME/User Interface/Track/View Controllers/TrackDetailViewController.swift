@@ -23,13 +23,14 @@ class TrackDetailViewController: UIViewController {
         trackNameTextFieldWithLabel.label.text = "Name"
         trackNameTextFieldWithLabel.textField.placeholder = "Weight Loss Process"
         trackNameTextFieldWithLabel.textField.delegate = self
+        trackNameTextFieldWithLabel.textField.becomeFirstResponder()
         observeChanges()
     }
 
     @objc func onNext() {
         let selectPredefinedLanesTVC = try! Storyboard.getVC(with: "SelectPredefinedLanesTableViewController",
-                                                             in: .lane) as! SelectPredefinedLanesTableViewController
-        let selectPredefinedLanesTVM = SelectPredefinedLanesTableViewModel()
+                                                             in: .lane) as! SelectLanesTableViewController
+        let selectPredefinedLanesTVM = SelectLanesTableViewModel()
         selectPredefinedLanesTVC.viewModel = selectPredefinedLanesTVM
         
         navigationController?.pushViewController(selectPredefinedLanesTVC, animated: true)
@@ -59,7 +60,10 @@ extension TrackDetailViewController {
         
         trackNameTextFieldWithLabel.textField.rx.text.subscribe(onNext: { [weak self] text in
             guard let `self` = self else { return }
-            guard let text = text, text.count > 0 else { return }
+            guard let text = text, text.count > 0 else {
+                self.navigationItem.rightBarButtonItem?.isEnabled = false
+                return
+            }
             self.navigationItem.rightBarButtonItem?.isEnabled = (self.viewModel.mode.value == .create)
             (self.navigationController as? TrackNavigationViewController)?.trackCreationService?.buildingTrackModel.name = text
         }).disposed(by: viewModel.disposeBag)

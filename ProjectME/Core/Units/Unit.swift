@@ -9,6 +9,8 @@
 import Foundation
 
 protocol Unit {
+    
+    static var unitSystemIdentifier: UnitSystemIdentifier { get }
     static var conversionFactor: Double { get }
 }
 

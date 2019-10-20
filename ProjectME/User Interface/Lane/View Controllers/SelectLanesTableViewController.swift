@@ -18,11 +18,12 @@ class SelectLanesTableViewController: UITableViewController {
         title = "Shiny Lanes"
         
         tableView.tableFooterView = UIView()
-        tableView.register(SelectPredefinedLaneTableViewCell.self,
-                           forCellReuseIdentifier: "SelectPredefinedLaneTableViewCell")
+        tableView.register(UINib(nibName: "LaneTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "LaneTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsMultipleSelection = true
+        tableView.separatorStyle = .none
         
         tableViewHeader()
         
@@ -70,21 +71,29 @@ extension SelectLanesTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SelectPredefinedLaneTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LaneTableViewCell", for: indexPath) as! LaneTableViewCell
+        
         let lane = viewModel.predefinedLanes.value[indexPath.row]
-        cell.textLabel?.text = lane.name
-        cell.detailTextLabel?.text = lane.descriptionShort
-        cell.selectionStyle = .default
+        
+        cell.load(lane: lane)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! SelectPredefinedLaneTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! LaneTableViewCell
         if cell.accessoryType == .checkmark {
             cell.accessoryType = .none
         } else {
             cell.accessoryType = .checkmark
             cell.isSelected = true
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case SelectLanesTableViewModel.TableSections.custom.rawValue: return 300
+        case SelectLanesTableViewModel.TableSections.system.rawValue: return 200
+        default: return 200
         }
     }
     

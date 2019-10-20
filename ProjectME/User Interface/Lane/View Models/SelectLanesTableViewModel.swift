@@ -1,5 +1,5 @@
 //
-//  SelectPredefinedLanesTableViewModel.swift
+//  SelectLanesTableViewModel.swift
 //  ProjectME
 //
 //  Created by Robert Sandru on 10/20/19.
@@ -10,7 +10,11 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class SelectPredefinedLanesTableViewModel {
+class SelectLanesTableViewModel {
+    
+    enum TableSections: Int {
+        case custom = 0, system
+    }
     
     var predefinedLanes: BehaviorRelay<[LaneModel]> = BehaviorRelay(value: [])
     

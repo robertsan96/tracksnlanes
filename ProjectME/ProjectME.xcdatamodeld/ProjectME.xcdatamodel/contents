@@ -4,10 +4,13 @@
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descriptionLong" optional="YES" attributeType="String"/>
         <attribute name="descriptionShort" optional="YES" attributeType="String"/>
+        <attribute name="locked" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="system" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="premium" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="system" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="unitSystemIdentifier" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="track" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="TrackModel" inverseName="lanes" inverseEntity="TrackModel"/>
+        <relationship name="track" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="TrackModel" inverseName="lanes" inverseEntity="TrackModel"/>
     </entity>
     <entity name="TrackModel" representedClassName="TrackModel" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -17,7 +20,7 @@
         <relationship name="lanes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LaneModel" inverseName="track" inverseEntity="LaneModel" spotlightIndexingEnabled="YES"/>
     </entity>
     <elements>
+        <element name="LaneModel" positionX="-54" positionY="-9" width="128" height="193"/>
         <element name="TrackModel" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="LaneModel" positionX="-54" positionY="-9" width="128" height="148"/>
     </elements>
 </model>

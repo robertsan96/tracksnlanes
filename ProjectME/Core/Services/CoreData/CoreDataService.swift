@@ -69,46 +69,62 @@ extension CoreDataService {
         weightLossTrack.updatedAt = Date.getDateInTimezone()
         weightLossTrack.system = true
         
-        let weightLossKgLane = LaneModel(context: context)
-        weightLossKgLane.name = "Kilogram Lane"
-        weightLossKgLane.descriptionShort = "A lane that will register kilograms."
-        weightLossKgLane.descriptionLong = "This lane is all about logging your weight. It will generate graphs, show you progress and it's able to send notifications."
-        weightLossKgLane.createdAt = Date.getDateInTimezone()
-        weightLossKgLane.updatedAt = Date.getDateInTimezone()
-        weightLossKgLane.system = true
+        let pl1 = LaneModel(context: context)
+        pl1.name = "Weight Lane"
+        pl1.descriptionShort = "A lane that will register your weight and will remind you periodically to renew the input values. It will also generate a graph with all the progress or regress you made. It is benefic to be added into a Healthy Life tracker. 😎"
+        pl1.descriptionLong = "This lane is all about logging your water consumption. It will generate graphs, show you progress and it's able to send notifications."
+        pl1.createdAt = Date.getDateInTimezone()
+        pl1.updatedAt = Date.getDateInTimezone()
+        pl1.system = true
+        pl1.premium = true
+        pl1.locked = false
+        pl1.unitSystemIdentifier = UnitSystemIdentifier.kilogram.rawValue
         
-        weightLossTrack.addToLanes(weightLossKgLane)
+        let pl2 = LaneModel(context: context)
+        pl2.name = "Running Lane 🏃🏻‍♂️"
+        pl2.descriptionShort = "Are you ready for the marathon? Log all your running distances using this awesome predefined Jogging Lane. Charts, notifications are mandatory for a runner to improve. We know that, that's why we included all this functionality in this premium lane."
+        pl2.descriptionLong = "This lane is all about logging your water consumption. It will generate graphs, show you progress and it's able to send notifications."
+        pl2.createdAt = Date.getDateInTimezone()
+        pl2.updatedAt = Date.getDateInTimezone()
+        pl2.system = true
+        pl2.premium = true
+        pl2.locked = true
+        pl2.unitSystemIdentifier = UnitSystemIdentifier.kilometer.rawValue
+        
+        let pl3 = LaneModel(context: context)
+        pl3.name = "Menstrual Cycles Lane"
+        pl3.descriptionShort = "Ugh.. it's been already a month! 🙍🏻‍♀️ We got you covered, girls! Log all your menstrual cycle activity in this lane and we promise you'll never be surprised again by your body. We use predictions and machine learning to cover you. All for free."
+        pl3.descriptionLong = "This lane is all about logging your water consumption. It will generate graphs, show you progress and it's able to send notifications."
+        pl3.createdAt = Date.getDateInTimezone()
+        pl3.updatedAt = Date.getDateInTimezone()
+        pl3.system = true
+        pl3.premium = false
+        pl3.locked = false
+        pl3.unitSystemIdentifier = UnitSystemIdentifier.hour.rawValue
+        
+        let pl4 = LaneModel(context: context)
+        pl4.name = "Water Lane 💦"
+        pl4.descriptionShort = "Did you drink your water? Include this lane in your healthy tracker and you'll be able to count the quantity of water you want to consume per day. Just configure the quantity and the notifications interval. We'll take care of the rest. You just drink."
+        pl4.descriptionLong = "This lane is all about logging your water consumption. It will generate graphs, show you progress and it's able to send notifications."
+        pl4.createdAt = Date.getDateInTimezone()
+        pl4.updatedAt = Date.getDateInTimezone()
+        pl4.system = true
+        pl4.premium = false
+        pl4.locked = false
+        pl4.unitSystemIdentifier = UnitSystemIdentifier.milimeter.rawValue
+        
+        let pl5 = LaneModel(context: context)
+        pl5.name = "Belly Size Lane"
+        pl5.descriptionShort = "So you want to get fit? Why not keep an eye on your centimeters? Make sure you measure your beer belly and insert the values in this lane. We'll show you how it's growing! Oops, how it's getting smaller! 😎"
+        pl5.descriptionLong = "This lane is all about logging your water consumption. It will generate graphs, show you progress and it's able to send notifications."
+        pl5.createdAt = Date.getDateInTimezone()
+        pl5.updatedAt = Date.getDateInTimezone()
+        pl5.system = true
+        pl5.premium = false
+        pl5.locked = false
+        pl5.unitSystemIdentifier = UnitSystemIdentifier.centimeter.rawValue
         
         store(object: weightLossTrack)
-        
-        let waterConsumptionLane = LaneModel(context: context)
-        waterConsumptionLane.name = "Water Lane"
-        waterConsumptionLane.descriptionShort = "A lane that will register water consumption."
-        waterConsumptionLane.descriptionLong = "This lane is all about logging your water consumption. It will generate graphs, show you progress and it's able to send notifications."
-        waterConsumptionLane.createdAt = Date.getDateInTimezone()
-        waterConsumptionLane.updatedAt = Date.getDateInTimezone()
-        waterConsumptionLane.system = true
-        
-        store(object: waterConsumptionLane)
-        
-        let chestSizeLane = LaneModel(context: context)
-        chestSizeLane.name = "Chest Size Lane"
-        chestSizeLane.descriptionShort = "A lane that will register your chest size."
-        chestSizeLane.descriptionLong = "This lane is all about logging your chest size. It will generate graphs, show you progress and it's able to send notifications."
-        chestSizeLane.createdAt = Date.getDateInTimezone()
-        chestSizeLane.updatedAt = Date.getDateInTimezone()
-        chestSizeLane.system = true
-        
-        store(object: chestSizeLane)
-        
-        let seatSizeLane = LaneModel(context: context)
-        seatSizeLane.name = "Seat Size Lane"
-        seatSizeLane.descriptionShort = "A lane that will register your big ass size."
-        seatSizeLane.descriptionLong = "This lane is all about logging your big ass size. It will generate graphs, show you progress and it's able to send notifications."
-        seatSizeLane.createdAt = Date.getDateInTimezone()
-        seatSizeLane.updatedAt = Date.getDateInTimezone()
-        seatSizeLane.system = true
-        
-        store(object: seatSizeLane)
+        store(object: pl1)
     }
 }

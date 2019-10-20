@@ -10,6 +10,10 @@ import Foundation
 
 enum Second: Unit {
     
+    static var unitSystemIdentifier: UnitSystemIdentifier {
+        return .second
+    }
+    
     static var conversionFactor: Double {
         return 1
     }
@@ -17,12 +21,20 @@ enum Second: Unit {
 
 enum Minute: Unit {
     
+    static var unitSystemIdentifier: UnitSystemIdentifier {
+        return .minute
+    }
+    
     static var conversionFactor: Double {
         return 60
     }
 }
 
 enum Hour: Unit {
+    
+    static var unitSystemIdentifier: UnitSystemIdentifier {
+        return .hour
+    }
     
     static var conversionFactor: Double {
         return 3600

@@ -10,6 +10,10 @@ import Foundation
 
 enum Kilogram: Unit {
 
+    static var unitSystemIdentifier: UnitSystemIdentifier {
+        return .kilogram
+    }
+    
     static var conversionFactor: Double {
         return 1
     }
@@ -17,12 +21,20 @@ enum Kilogram: Unit {
 
 enum Pound: Unit {
     
+    static var unitSystemIdentifier: UnitSystemIdentifier {
+        return .pound
+    }
+    
     static var conversionFactor: Double {
         return 0.453592
     }
 }
 
 enum Gram: Unit {
+    
+    static var unitSystemIdentifier: UnitSystemIdentifier {
+        return .gram
+    }
     
     static var conversionFactor: Double {
         return 0.001

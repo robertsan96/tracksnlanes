@@ -10,12 +10,20 @@ import Foundation
 
 enum Meter: Unit {
     
+    static var unitSystemIdentifier: UnitSystemIdentifier {
+        return .meter
+    }
+    
     static var conversionFactor: Double {
         return 1
     }
 }
 
 enum Centimeter: Unit {
+    
+    static var unitSystemIdentifier: UnitSystemIdentifier {
+        return .centimeter
+    }
     
     static var conversionFactor: Double {
         return 0.01
@@ -24,12 +32,20 @@ enum Centimeter: Unit {
 
 enum Milimeter: Unit {
     
+    static var unitSystemIdentifier: UnitSystemIdentifier {
+        return .milimeter
+    }
+    
     static var conversionFactor: Double {
         return 0.001
     }
 }
 
 enum Kilometer: Unit {
+    
+    static var unitSystemIdentifier: UnitSystemIdentifier {
+        return .kilometer
+    }
     
     static var conversionFactor: Double {
         return 1000

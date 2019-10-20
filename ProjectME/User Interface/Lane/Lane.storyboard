@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="879.71014492753625" y="158.70535714285714"/>
         </scene>
-        <!--Select Predefined Lanes Table View Controller-->
+        <!--Select Lanes Table View Controller-->
         <scene sceneID="82r-IN-b0e">
             <objects>
-                <tableViewController storyboardIdentifier="SelectPredefinedLanesTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e1V-wP-Eb9" customClass="SelectPredefinedLanesTableViewController" customModule="ProjectME" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SelectPredefinedLanesTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e1V-wP-Eb9" customClass="SelectLanesTableViewController" customModule="ProjectME" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kus-fE-dUd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
