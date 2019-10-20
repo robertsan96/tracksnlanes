@@ -6,7 +6,7 @@
 //  Copyright © 2019 codecontrive. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RxCocoa
 import RxSwift
 
@@ -25,5 +25,16 @@ class SelectPredefinedLanesTableViewModel {
             return lane.system
         }
         self.predefinedLanes.accept(predefinedLanes)
+    }
+    
+    func selectedPredefinedLanes(from table: UITableView) -> [LaneModel] {
+        var selectedPredefinedLanes: [LaneModel] = []
+        
+        for selectedIndexPath in table.indexPathsForSelectedRows ?? [] {
+            selectedPredefinedLanes.append(predefinedLanes.value[selectedIndexPath.row])
+        }
+        
+        
+        return selectedPredefinedLanes
     }
 }

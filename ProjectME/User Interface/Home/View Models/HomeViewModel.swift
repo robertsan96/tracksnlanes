@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
 class HomeViewModel {
     
@@ -17,8 +19,12 @@ class HomeViewModel {
     var tracks: [TrackModel] = []
     var options: [HomeOptionModel] = []
     
+    var updatedTracksSignal: PublishRelay<Bool> = PublishRelay()
+    
+    var disposeBag: DisposeBag = DisposeBag()
+    
     init() {
-        tracks = CoreDataService.shared.get()
+        loadTracks()
         
         options = [
             HomeOptionModel(name: "Settings", icon: "👨🏻‍🔧"),
@@ -26,5 +32,10 @@ class HomeViewModel {
             HomeOptionModel(name: "Purchases", icon: "💰"),
             HomeOptionModel(name: "Market", icon: "💹")
         ]
+    }
+    
+    func loadTracks() {
+        tracks = CoreDataService.shared.get()
+        updatedTracksSignal.accept(true)
     }
 }

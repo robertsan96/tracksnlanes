@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeTableViewController: UITableViewController {
 
@@ -29,6 +30,8 @@ class HomeTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         
         view.backgroundColor = UIColor.systemBackground
+        
+        observeChanges()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,8 +42,14 @@ class HomeTableViewController: UITableViewController {
         let tracksNVC = try! Storyboard.getVC(with: "TrackNavigationViewController", in: .track) as! TrackNavigationViewController
         let trackVC = try! Storyboard.getVC(with: "TrackDetailViewController", in: .track) as! TrackDetailViewController
         let trackVM = TrackDetailViewModel(mode: .create)
+        let trackCS = TrackCreationService()
+        
         trackVC.viewModel = trackVM
         tracksNVC.viewControllers = [trackVC]
+        tracksNVC.trackCreationService = trackCS
+        
+        trackCS.delegate = self
+        
         present(tracksNVC, animated: true, completion: nil)
     }
     
@@ -109,35 +118,25 @@ class HomeTableViewController: UITableViewController {
             CoreDataService.shared.remove(object: model)
             viewModel.tracks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            viewModel.loadTracks()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
+}
+
+extension HomeTableViewController {
     
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    func observeChanges() {
+        viewModel.updatedTracksSignal.subscribe(onNext: { [weak self] tracks in
+            self?.tableView.reloadData()
+        }).disposed(by: viewModel.disposeBag)
     }
-    */
+}
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+extension HomeTableViewController: TrackCreationServiceDelegate {
+    
+    func didCreateTrack(track: TrackModel) {
+        viewModel.loadTracks()
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

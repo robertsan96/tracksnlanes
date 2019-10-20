@@ -10,6 +10,8 @@ import UIKit
 
 class TrackNavigationViewController: UINavigationController {
 
+    var trackCreationService: TrackCreationService?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

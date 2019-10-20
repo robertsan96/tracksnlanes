@@ -27,8 +27,12 @@ class CoreDataService {
 //        migrate()
     }
     
-    func get<T: NSManagedObject>() -> [T] {
+    func get<T: NSManagedObject>(orderedByUpdateDate: Bool = true) -> [T] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: T.entityName)
+        if orderedByUpdateDate {
+            let sortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: false)
+            fetchRequest.sortDescriptors = [sortDescriptor]
+        }
         do {
             let objects = try context.fetch(fetchRequest) as? [T]
             return objects ?? []
@@ -67,6 +71,8 @@ extension CoreDataService {
         
         let weightLossKgLane = LaneModel(context: context)
         weightLossKgLane.name = "Kilogram Lane"
+        weightLossKgLane.descriptionShort = "A lane that will register kilograms."
+        weightLossKgLane.descriptionLong = "This lane is all about logging your weight. It will generate graphs, show you progress and it's able to send notifications."
         weightLossKgLane.createdAt = Date.getDateInTimezone()
         weightLossKgLane.updatedAt = Date.getDateInTimezone()
         weightLossKgLane.system = true
@@ -77,6 +83,8 @@ extension CoreDataService {
         
         let waterConsumptionLane = LaneModel(context: context)
         waterConsumptionLane.name = "Water Lane"
+        waterConsumptionLane.descriptionShort = "A lane that will register water consumption."
+        waterConsumptionLane.descriptionLong = "This lane is all about logging your water consumption. It will generate graphs, show you progress and it's able to send notifications."
         waterConsumptionLane.createdAt = Date.getDateInTimezone()
         waterConsumptionLane.updatedAt = Date.getDateInTimezone()
         waterConsumptionLane.system = true
@@ -85,6 +93,8 @@ extension CoreDataService {
         
         let chestSizeLane = LaneModel(context: context)
         chestSizeLane.name = "Chest Size Lane"
+        chestSizeLane.descriptionShort = "A lane that will register your chest size."
+        chestSizeLane.descriptionLong = "This lane is all about logging your chest size. It will generate graphs, show you progress and it's able to send notifications."
         chestSizeLane.createdAt = Date.getDateInTimezone()
         chestSizeLane.updatedAt = Date.getDateInTimezone()
         chestSizeLane.system = true
@@ -93,6 +103,8 @@ extension CoreDataService {
         
         let seatSizeLane = LaneModel(context: context)
         seatSizeLane.name = "Seat Size Lane"
+        seatSizeLane.descriptionShort = "A lane that will register your big ass size."
+        seatSizeLane.descriptionLong = "This lane is all about logging your big ass size. It will generate graphs, show you progress and it's able to send notifications."
         seatSizeLane.createdAt = Date.getDateInTimezone()
         seatSizeLane.updatedAt = Date.getDateInTimezone()
         seatSizeLane.system = true

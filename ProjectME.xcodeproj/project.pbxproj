@@ -58,6 +58,7 @@
 		465955C4235BBBBB002347F9 /* SelectPredefinedLanesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955C3235BBBBB002347F9 /* SelectPredefinedLanesTableViewController.swift */; };
 		465955C8235BC087002347F9 /* SelectPredefinedLaneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955C6235BC087002347F9 /* SelectPredefinedLaneTableViewCell.swift */; };
 		465955C9235BC087002347F9 /* SelectPredefinedLaneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 465955C7235BC087002347F9 /* SelectPredefinedLaneTableViewCell.xib */; };
+		465955CC235C7756002347F9 /* TrackCreationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955CB235C7756002347F9 /* TrackCreationService.swift */; };
 		837E060A47F4680C4650E36D /* Pods_ProjectME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27E882DD62CCF72C9BF5A97 /* Pods_ProjectME.framework */; };
 		F2464BC15FE2876DF5DC3794 /* Pods_ProjectMETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5A56FF1D30379FC55F4B2F /* Pods_ProjectMETests.framework */; };
 /* End PBXBuildFile section */
@@ -138,6 +139,7 @@
 		465955C3235BBBBB002347F9 /* SelectPredefinedLanesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPredefinedLanesTableViewController.swift; sourceTree = "<group>"; };
 		465955C6235BC087002347F9 /* SelectPredefinedLaneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPredefinedLaneTableViewCell.swift; sourceTree = "<group>"; };
 		465955C7235BC087002347F9 /* SelectPredefinedLaneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPredefinedLaneTableViewCell.xib; sourceTree = "<group>"; };
+		465955CB235C7756002347F9 /* TrackCreationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCreationService.swift; sourceTree = "<group>"; };
 		6C1C191FC7D6CC629B51B838 /* Pods-ProjectME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.release.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.release.xcconfig"; sourceTree = "<group>"; };
 		958B0C7BCEE1C29C7E5C4216 /* Pods-ProjectMETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMETests.release.xcconfig"; path = "Target Support Files/Pods-ProjectMETests/Pods-ProjectMETests.release.xcconfig"; sourceTree = "<group>"; };
 		BE39A6C3F23B42A4E9A3B4A4 /* Pods-ProjectME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.debug.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.debug.xcconfig"; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				465955B7235BB1DB002347F9 /* Track.storyboard */,
+				465955CA235C7742002347F9 /* Service */,
 				465955B5235BB1C7002347F9 /* View Controllers */,
 				465955B6235BB1CD002347F9 /* View Model */,
 			);
@@ -533,6 +536,14 @@
 				465955C7235BC087002347F9 /* SelectPredefinedLaneTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		465955CA235C7742002347F9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				465955CB235C7756002347F9 /* TrackCreationService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		8CC876DC6CC5DE9C3CBE78E1 /* Frameworks */ = {
@@ -806,6 +817,7 @@
 			files = (
 				465955BA235BB226002347F9 /* TrackNavigationViewController.swift in Sources */,
 				46595504235AE43D002347F9 /* ViewController.swift in Sources */,
+				465955CC235C7756002347F9 /* TrackCreationService.swift in Sources */,
 				46595584235B45A3002347F9 /* LaneDetailViewModel.swift in Sources */,
 				46595586235B49FE002347F9 /* UITextField+Designables.swift in Sources */,
 				465955BE235BB264002347F9 /* TrackDetailViewModel.swift in Sources */,

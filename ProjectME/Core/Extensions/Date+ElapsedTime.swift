@@ -29,7 +29,7 @@ extension Date {
         if let minute = interval.minute, minute > 0 {
             return minute == 1 ? "1 min ago." : "\(minute) minutes ago."
         }
-        if let second = interval.second, second > 0 {
+        if let second = interval.second, second >= 0 {
             return "just now."
         }
 

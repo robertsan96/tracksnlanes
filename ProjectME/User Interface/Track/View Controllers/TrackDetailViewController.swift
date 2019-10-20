@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class TrackDetailViewController: UIViewController {
 
@@ -21,7 +22,7 @@ class TrackDetailViewController: UIViewController {
         
         trackNameTextFieldWithLabel.label.text = "Name"
         trackNameTextFieldWithLabel.textField.placeholder = "Weight Loss Process"
-        
+        trackNameTextFieldWithLabel.textField.delegate = self
         observeChanges()
     }
 
@@ -39,11 +40,28 @@ class TrackDetailViewController: UIViewController {
     }
 }
 
+extension TrackDetailViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = textField.text, text.count > 0 {
+            onNext()
+        }
+        return false
+    }
+}
+
 extension TrackDetailViewController {
     
     func observeChanges() {
         viewModel.mode.subscribe(onNext: { [weak self] mode in
             self?.update(to: mode)
+        }).disposed(by: viewModel.disposeBag)
+        
+        trackNameTextFieldWithLabel.textField.rx.text.subscribe(onNext: { [weak self] text in
+            guard let `self` = self else { return }
+            guard let text = text, text.count > 0 else { return }
+            self.navigationItem.rightBarButtonItem?.isEnabled = (self.viewModel.mode.value == .create)
+            (self.navigationController as? TrackNavigationViewController)?.trackCreationService?.buildingTrackModel.name = text
         }).disposed(by: viewModel.disposeBag)
     }
     
