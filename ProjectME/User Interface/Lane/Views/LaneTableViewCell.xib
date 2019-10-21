@@ -59,9 +59,18 @@
                                     <constraint firstAttribute="height" constant="50" id="MGd-t2-VZa"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rXU-LD-Gif">
+                                <rect key="frame" x="271" y="5.5" width="24" height="25"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="KDi-m1-ier"/>
+                                    <constraint firstAttribute="height" constant="26" id="q6P-Xz-9Kp"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rXU-LD-Gif" secondAttribute="trailing" constant="5" id="1Wb-Bt-dYH"/>
                             <constraint firstAttribute="trailing" secondItem="JZH-nf-jmd" secondAttribute="trailing" constant="20" id="Pjb-cO-Xxh"/>
                             <constraint firstItem="JZH-nf-jmd" firstAttribute="top" secondItem="kZO-Va-Qb5" secondAttribute="top" constant="20" id="Tam-o2-gTC"/>
                             <constraint firstItem="BNF-u3-jme" firstAttribute="leading" secondItem="kZO-Va-Qb5" secondAttribute="leading" constant="20" id="aPF-2Q-2er"/>
@@ -72,6 +81,7 @@
                             <constraint firstItem="mFI-dQ-Ttf" firstAttribute="leading" secondItem="kZO-Va-Qb5" secondAttribute="leading" constant="20" id="ogO-jG-TDb"/>
                             <constraint firstItem="JZH-nf-jmd" firstAttribute="leading" secondItem="kZO-Va-Qb5" secondAttribute="leading" constant="20" id="s5D-se-IJd"/>
                             <constraint firstAttribute="bottom" secondItem="mFI-dQ-Ttf" secondAttribute="bottom" id="shu-gJ-KPY"/>
+                            <constraint firstItem="rXU-LD-Gif" firstAttribute="top" secondItem="kZO-Va-Qb5" secondAttribute="top" constant="5" id="uJu-A5-KUJ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -90,6 +100,7 @@
                 <outlet property="laneDetailStackView" destination="mFI-dQ-Ttf" id="zOY-qH-DQr"/>
                 <outlet property="laneLockedImageView" destination="Xgy-FW-nBd" id="kVB-lv-DNv"/>
                 <outlet property="laneNameLabel" destination="JZH-nf-jmd" id="Sej-aH-F2I"/>
+                <outlet property="laneSelectedImageView" destination="rXU-LD-Gif" id="fku-SN-km1"/>
                 <outlet property="laneTypeLabel" destination="7v7-Zj-wxC" id="xrC-BP-7YN"/>
                 <outlet property="laneUnitSystemLabel" destination="3AW-09-uOe" id="qkd-Ao-euK"/>
             </connections>
@@ -97,6 +108,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="64" height="60"/>
         <image name="lock.open.fill" catalog="system" width="64" height="56"/>
     </resources>
 </document>

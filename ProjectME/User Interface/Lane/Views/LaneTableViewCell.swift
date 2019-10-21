@@ -17,6 +17,7 @@ class LaneTableViewCell: UITableViewCell {
     @IBOutlet weak var laneUnitSystemLabel: UILabel!
     @IBOutlet weak var laneLockedImageView: UIImageView!
     @IBOutlet weak var laneTypeLabel: UILabel!
+    @IBOutlet weak var laneSelectedImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +26,17 @@ class LaneTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        selectionStyle = .none
+        
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            if selected {
+                self?.cellBackgroundView?.backgroundColor = .systemGray5
+            } else {
+                self?.cellBackgroundView?.backgroundColor = .tertiarySystemGroupedBackground
+            }
+            self?.laneSelectedImageView.isHidden = !selected
+        }
     }
     
     func load(lane: LaneModel) {
@@ -71,7 +81,13 @@ class LaneTableViewCell: UITableViewCell {
         if lane.system {
             if lane.premium {
                 laneTypeLabel.text = "PREMIUM"
-                laneTypeLabel.textColor = .systemYellow
+                if lane.locked {
+                    laneTypeLabel.text = "3.66$"
+                    laneTypeLabel.textColor = .systemRed
+                } else {
+                    laneTypeLabel.text = "OWNED PREMIUM"
+                    laneTypeLabel.textColor = .systemGreen
+                }
             } else {
                 laneTypeLabel.text = "SYSTEM"
                 laneTypeLabel.textColor = .label

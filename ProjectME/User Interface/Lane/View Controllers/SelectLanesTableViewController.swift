@@ -79,14 +79,21 @@ extension SelectLanesTableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        let lane = viewModel.predefinedLanes.value[indexPath.row]
+        if lane.locked {
+            print("Show us some keys to unlock the lane. 😎")
+            let alert = UIAlertController(title: "Locked", message: "Buy?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "YEAH", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return nil
+        } else {
+            return indexPath
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! LaneTableViewCell
-        if cell.accessoryType == .checkmark {
-            cell.accessoryType = .none
-        } else {
-            cell.accessoryType = .checkmark
-            cell.isSelected = true
-        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
