@@ -74,9 +74,11 @@ class LaneTableViewCell: UITableViewCell {
                 laneTypeLabel.textColor = .systemYellow
             } else {
                 laneTypeLabel.text = "SYSTEM"
+                laneTypeLabel.textColor = .label
             }
         } else {
             laneTypeLabel.text = "CUSTOM"
+            laneTypeLabel.textColor = .label
         }
     }
 }
