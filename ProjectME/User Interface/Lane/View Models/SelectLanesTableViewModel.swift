@@ -37,8 +37,10 @@ class SelectLanesTableViewModel {
         for selectedIndexPath in table.indexPathsForSelectedRows ?? [] {
             selectedPredefinedLanes.append(lanes.value[selectedIndexPath.row])
         }
-        
-        
         return selectedPredefinedLanes
+    }
+    
+    func didAddTemporary(lane: LaneModel, in trackCreationService: TrackCreationService) {
+        trackCreationService.buildingTrackModel.addToLanes(lane)
     }
 }

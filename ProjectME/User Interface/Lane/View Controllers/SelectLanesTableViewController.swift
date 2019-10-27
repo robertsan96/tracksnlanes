@@ -137,7 +137,7 @@ extension SelectLanesTableViewController {
 extension SelectLanesTableViewController: LaneDetailViewControllerDelegate {
     
     func didCreateLane(mode: LaneDetailViewModel.Mode, lane: LaneModel) {
-        viewModel.lanes.accept(viewModel.lanes.value + [lane])
-        tableView.reloadData()
+        guard let trackCreationService = (navigationController as? TrackNavigationViewController)?.trackCreationService else { return }
+        viewModel.didAddTemporary(lane: lane, in: trackCreationService)
     }
 }

@@ -65,6 +65,7 @@
 		465DADFB2365DFA3007D0C63 /* UIScrollView+ScrollToBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DADFA2365DFA3007D0C63 /* UIScrollView+ScrollToBottom.swift */; };
 		465DADFE2365E1E2007D0C63 /* TextViewWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 465DADFD2365E1E2007D0C63 /* TextViewWithLabel.xib */; };
 		465DAE002365E1F1007D0C63 /* TextViewWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DADFF2365E1F1007D0C63 /* TextViewWithLabel.swift */; };
+		465DAE022365EC76007D0C63 /* LaneModel+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAE012365EC76007D0C63 /* LaneModel+Helpers.swift */; };
 		837E060A47F4680C4650E36D /* Pods_ProjectME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27E882DD62CCF72C9BF5A97 /* Pods_ProjectME.framework */; };
 		F2464BC15FE2876DF5DC3794 /* Pods_ProjectMETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5A56FF1D30379FC55F4B2F /* Pods_ProjectMETests.framework */; };
 /* End PBXBuildFile section */
@@ -152,6 +153,7 @@
 		465DADFA2365DFA3007D0C63 /* UIScrollView+ScrollToBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ScrollToBottom.swift"; sourceTree = "<group>"; };
 		465DADFD2365E1E2007D0C63 /* TextViewWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewWithLabel.xib; sourceTree = "<group>"; };
 		465DADFF2365E1F1007D0C63 /* TextViewWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWithLabel.swift; sourceTree = "<group>"; };
+		465DAE012365EC76007D0C63 /* LaneModel+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaneModel+Helpers.swift"; sourceTree = "<group>"; };
 		6C1C191FC7D6CC629B51B838 /* Pods-ProjectME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.release.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.release.xcconfig"; sourceTree = "<group>"; };
 		958B0C7BCEE1C29C7E5C4216 /* Pods-ProjectMETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMETests.release.xcconfig"; path = "Target Support Files/Pods-ProjectMETests/Pods-ProjectMETests.release.xcconfig"; sourceTree = "<group>"; };
 		BE39A6C3F23B42A4E9A3B4A4 /* Pods-ProjectME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.debug.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.debug.xcconfig"; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 		4659553B235AE65A002347F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				465DAE012365EC76007D0C63 /* LaneModel+Helpers.swift */,
 				46595569235B1C60002347F9 /* Date+ElapsedTime.swift */,
 				4659556B235B2002002347F9 /* String+GetDate.swift */,
 				4659556D235B24BD002347F9 /* Date+CurrentDate.swift */,
@@ -872,6 +875,7 @@
 				46595584235B45A3002347F9 /* LaneDetailViewModel.swift in Sources */,
 				46595586235B49FE002347F9 /* UITextField+Designables.swift in Sources */,
 				465955D8235CA542002347F9 /* LaneTableViewCell.swift in Sources */,
+				465DAE022365EC76007D0C63 /* LaneModel+Helpers.swift in Sources */,
 				465DADFB2365DFA3007D0C63 /* UIScrollView+ScrollToBottom.swift in Sources */,
 				462FB3752365AB1A00907C3D /* TextFieldWithLabelPickerViewModel.swift in Sources */,
 				465955BE235BB264002347F9 /* TrackDetailViewModel.swift in Sources */,
