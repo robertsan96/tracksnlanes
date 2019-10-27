@@ -16,7 +16,7 @@ class SelectLanesTableViewModel {
         case custom = 0, system
     }
     
-    var predefinedLanes: BehaviorRelay<[LaneModel]> = BehaviorRelay(value: [])
+    var lanes: BehaviorRelay<[LaneModel]> = BehaviorRelay(value: [])
     
     var disposeBag: DisposeBag = DisposeBag()
     
@@ -28,14 +28,14 @@ class SelectLanesTableViewModel {
         let predefinedLanes: [LaneModel] = CoreDataService.shared.get().filter { lane -> Bool in
             return lane.system
         }
-        self.predefinedLanes.accept(predefinedLanes)
+        self.lanes.accept(predefinedLanes)
     }
     
     func selectedPredefinedLanes(from table: UITableView) -> [LaneModel] {
         var selectedPredefinedLanes: [LaneModel] = []
         
         for selectedIndexPath in table.indexPathsForSelectedRows ?? [] {
-            selectedPredefinedLanes.append(predefinedLanes.value[selectedIndexPath.row])
+            selectedPredefinedLanes.append(lanes.value[selectedIndexPath.row])
         }
         
         

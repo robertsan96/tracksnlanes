@@ -63,6 +63,8 @@
 		465955D8235CA542002347F9 /* LaneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955D7235CA542002347F9 /* LaneTableViewCell.swift */; };
 		465955DB235CA684002347F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465955DA235CA684002347F9 /* Constants.swift */; };
 		465DADFB2365DFA3007D0C63 /* UIScrollView+ScrollToBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DADFA2365DFA3007D0C63 /* UIScrollView+ScrollToBottom.swift */; };
+		465DADFE2365E1E2007D0C63 /* TextViewWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 465DADFD2365E1E2007D0C63 /* TextViewWithLabel.xib */; };
+		465DAE002365E1F1007D0C63 /* TextViewWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DADFF2365E1F1007D0C63 /* TextViewWithLabel.swift */; };
 		837E060A47F4680C4650E36D /* Pods_ProjectME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27E882DD62CCF72C9BF5A97 /* Pods_ProjectME.framework */; };
 		F2464BC15FE2876DF5DC3794 /* Pods_ProjectMETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5A56FF1D30379FC55F4B2F /* Pods_ProjectMETests.framework */; };
 /* End PBXBuildFile section */
@@ -148,6 +150,8 @@
 		465955D7235CA542002347F9 /* LaneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneTableViewCell.swift; sourceTree = "<group>"; };
 		465955DA235CA684002347F9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		465DADFA2365DFA3007D0C63 /* UIScrollView+ScrollToBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ScrollToBottom.swift"; sourceTree = "<group>"; };
+		465DADFD2365E1E2007D0C63 /* TextViewWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewWithLabel.xib; sourceTree = "<group>"; };
+		465DADFF2365E1F1007D0C63 /* TextViewWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWithLabel.swift; sourceTree = "<group>"; };
 		6C1C191FC7D6CC629B51B838 /* Pods-ProjectME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.release.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.release.xcconfig"; sourceTree = "<group>"; };
 		958B0C7BCEE1C29C7E5C4216 /* Pods-ProjectMETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMETests.release.xcconfig"; path = "Target Support Files/Pods-ProjectMETests/Pods-ProjectMETests.release.xcconfig"; sourceTree = "<group>"; };
 		BE39A6C3F23B42A4E9A3B4A4 /* Pods-ProjectME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.debug.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.debug.xcconfig"; sourceTree = "<group>"; };
@@ -586,6 +590,8 @@
 		465DADFC2365E198007D0C63 /* TextView with Label */ = {
 			isa = PBXGroup;
 			children = (
+				465DADFD2365E1E2007D0C63 /* TextViewWithLabel.xib */,
+				465DADFF2365E1F1007D0C63 /* TextViewWithLabel.swift */,
 			);
 			path = "TextView with Label";
 			sourceTree = "<group>";
@@ -726,6 +732,7 @@
 				4659550F235AE43D002347F9 /* LaunchScreen.storyboard in Resources */,
 				465955D6235C98FB002347F9 /* LaneTableViewCell.xib in Resources */,
 				465955A5235B6219002347F9 /* PredefinedLanes.storyboard in Resources */,
+				465DADFE2365E1E2007D0C63 /* TextViewWithLabel.xib in Resources */,
 				4659557E235B443F002347F9 /* Lane.storyboard in Resources */,
 				46595566235B1493002347F9 /* HomeOptionTableViewCell.xib in Resources */,
 				46595592235B4DAD002347F9 /* TextFieldWithLabel.xib in Resources */,
@@ -893,6 +900,7 @@
 				46595541235B03F0002347F9 /* Unit.swift in Sources */,
 				46595561235B1473002347F9 /* HomeTrackTableViewCell.swift in Sources */,
 				465955A1235B6200002347F9 /* TrackKilogramsViewController.swift in Sources */,
+				465DAE002365E1F1007D0C63 /* TextViewWithLabel.swift in Sources */,
 				465955BC235BB253002347F9 /* TrackDetailViewController.swift in Sources */,
 				46595502235AE43D002347F9 /* SceneDelegate.swift in Sources */,
 				46595555235B1032002347F9 /* HomeTableViewController.swift in Sources */,

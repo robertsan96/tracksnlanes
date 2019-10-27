@@ -61,7 +61,7 @@ class SelectLanesTableViewController: UITableViewController {
 extension SelectLanesTableViewController {
     
     func observeChanges() {
-        viewModel.predefinedLanes.subscribe(onNext: { [weak self] predefinedLanes in
+        viewModel.lanes.subscribe(onNext: { [weak self] predefinedLanes in
             self?.update(with: predefinedLanes)
         }).disposed(by: viewModel.disposeBag)
     }
@@ -78,20 +78,20 @@ extension SelectLanesTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.predefinedLanes.value.count
+        return viewModel.lanes.value.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LaneTableViewCell", for: indexPath) as! LaneTableViewCell
         
-        let lane = viewModel.predefinedLanes.value[indexPath.row]
+        let lane = viewModel.lanes.value[indexPath.row]
         
         cell.load(lane: lane)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        let lane = viewModel.predefinedLanes.value[indexPath.row]
+        let lane = viewModel.lanes.value[indexPath.row]
         if lane.locked {
             print("Show us some keys to unlock the lane. 😎")
             let alert = UIAlertController(title: "Locked", message: "Buy?", preferredStyle: .alert)
@@ -137,7 +137,7 @@ extension SelectLanesTableViewController {
 extension SelectLanesTableViewController: LaneDetailViewControllerDelegate {
     
     func didCreateLane(mode: LaneDetailViewModel.Mode, lane: LaneModel) {
-        viewModel.predefinedLanes.accept(viewModel.predefinedLanes.value + [lane])
+        viewModel.lanes.accept(viewModel.lanes.value + [lane])
         tableView.reloadData()
     }
 }

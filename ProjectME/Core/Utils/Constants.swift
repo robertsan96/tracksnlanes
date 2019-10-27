@@ -49,6 +49,25 @@ enum UnitSystemIdentifier: String {
         }
     }
     
+    static func getUnitSystemIdentifierByDescription(for description: String?) -> UnitSystemIdentifier? {
+        guard description != nil else { return nil }
+        switch description {
+            case UnitSystemIdentifier.kilogram.getDescription(): return .kilogram
+            case UnitSystemIdentifier.pound.getDescription(): return .pound
+            case UnitSystemIdentifier.gram.getDescription(): return .gram
+            
+            case UnitSystemIdentifier.second.getDescription(): return .second
+            case UnitSystemIdentifier.minute.getDescription(): return .minute
+            case UnitSystemIdentifier.hour.getDescription(): return .hour
+            
+            case UnitSystemIdentifier.meter.getDescription(): return .meter
+            case UnitSystemIdentifier.centimeter.getDescription(): return .centimeter
+            case UnitSystemIdentifier.milimeter.getDescription(): return .milimeter
+            case UnitSystemIdentifier.kilometer.getDescription(): return .kilometer
+        default: return nil
+        }
+    }
+    
     func getDescription() -> String {
         switch self {
         case .kilogram: return "Kilogram"

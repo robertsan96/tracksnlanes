@@ -25,27 +25,27 @@
                                 <rect key="frame" x="0.0" y="83" width="414" height="813"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qp-zY-FLz" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="710"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6K-aa-08B" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="240" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="390" width="414" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="epM-ot-Lfv"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeM-Zj-SOi" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="190" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="340" width="414" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="MMo-2E-feC"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udu-iz-k68" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="124" width="414" height="50"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udu-iz-k68" customClass="TextViewWithLabel" customModule="ProjectME" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="124" width="414" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Gf5-be-FVW"/>
+                                                    <constraint firstAttribute="height" constant="200" id="Gf5-be-FVW"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N5f-lo-Sui" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
@@ -115,7 +115,7 @@
                     <navigationItem key="navigationItem" id="s24-52-BKw"/>
                     <connections>
                         <outlet property="laneDetailTextFieldWithLabel" destination="N5f-lo-Sui" id="c5E-Om-6hA"/>
-                        <outlet property="laneLongDetailTextFieldWithLabel" destination="Udu-iz-k68" id="yIz-tw-I9m"/>
+                        <outlet property="laneLongDetailTextViewWithLabel" destination="Udu-iz-k68" id="3Yl-dl-a7j"/>
                         <outlet property="laneNameTextFieldWithLabel" destination="7q6-Kx-9Kt" id="U1G-jf-acm"/>
                         <outlet property="laneUnitCategoryTextFieldWithLabel" destination="AeM-Zj-SOi" id="0SA-HI-qNU"/>
                         <outlet property="laneUnitTextFieldWithLabel" destination="s6K-aa-08B" id="StB-lO-fqJ"/>

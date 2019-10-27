@@ -25,7 +25,7 @@ class LaneDetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var laneNameTextFieldWithLabel: TextFieldWithLabel!
     @IBOutlet weak var laneDetailTextFieldWithLabel: TextFieldWithLabel!
-    @IBOutlet weak var laneLongDetailTextFieldWithLabel: TextFieldWithLabel!
+    @IBOutlet weak var laneLongDetailTextViewWithLabel: TextViewWithLabel!
     @IBOutlet weak var laneUnitCategoryTextFieldWithLabel: TextFieldWithLabel!
     @IBOutlet weak var laneUnitTextFieldWithLabel: TextFieldWithLabel!
     @IBOutlet weak var viewControllerDescriptionLabel: UILabel!
@@ -47,10 +47,10 @@ class LaneDetailViewController: UIViewController {
         laneDetailTextFieldWithLabel.textField.delegate = self
         laneDetailTextFieldWithLabel.textField.tag = TextFields.descriptionShort.rawValue
         
-        laneLongDetailTextFieldWithLabel.label.text = "Long Detail"
-        laneLongDetailTextFieldWithLabel.textField.placeholder = "I'll log my weight in this lane every Monday morning at 6 am, right after I jump out of the bed."
-        laneLongDetailTextFieldWithLabel.textField.delegate = self
-        laneLongDetailTextFieldWithLabel.textField.tag = TextFields.descriptionLong.rawValue
+        laneLongDetailTextViewWithLabel.label.text = "Long Detail"
+        laneLongDetailTextViewWithLabel.textView.text = ""
+//        laneLongDetailTextViewWithLabel.textView.delegate = self
+        laneLongDetailTextViewWithLabel.textView.tag = TextFields.descriptionLong.rawValue
         
         laneUnitCategoryTextFieldWithLabel.label.text = "Type"
         laneUnitCategoryTextFieldWithLabel
@@ -77,7 +77,16 @@ class LaneDetailViewController: UIViewController {
         switch viewModel.mode.value {
         case .create: break
         case .createWithoutSave:
-            break
+            guard let unit = UnitSystemIdentifier.getUnitSystemIdentifierByDescription(for: laneUnitTextFieldWithLabel.textField.text) else { return }
+            let lane = viewModel.buildLane(name: laneNameTextFieldWithLabel.textField.text,
+                                           shortDescription: laneDetailTextFieldWithLabel.textField.text,
+                                           longDescription: laneLongDetailTextViewWithLabel.textView.text,
+                                           unitCategory: unit.getCategory(),
+                                           unit: unit)
+            dismiss(animated: true) { [weak self] in
+                guard let vm = self?.viewModel else { return }
+                self?.delegate?.didCreateLane(mode: vm.mode.value, lane: lane)
+            }
         case .edit: break
         }
     }
@@ -129,7 +138,7 @@ extension LaneDetailViewController: UITextFieldDelegate, TextFieldWithLabelDeleg
             laneDetailTextFieldWithLabel.textField.becomeFirstResponder()
         }
         if textField.tag == TextFields.descriptionShort.rawValue {
-            laneLongDetailTextFieldWithLabel.textField.becomeFirstResponder()
+            laneLongDetailTextViewWithLabel.textView.becomeFirstResponder()
         }
         if textField.tag == TextFields.descriptionLong.rawValue {
             laneUnitCategoryTextFieldWithLabel.textField.becomeFirstResponder()
