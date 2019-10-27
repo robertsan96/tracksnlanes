@@ -30,6 +30,9 @@ class SelectLanesTableViewController: UITableViewController {
         let createCustomLaneButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onCreateCustomLane))
         let nextButton = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(onNext))
         
+        let trackCreationService = (navigationController as? TrackNavigationViewController)?.trackCreationService
+        viewModel.trackCreationService = trackCreationService
+        
         navigationItem.rightBarButtonItems = [nextButton, createCustomLaneButton]
         observeChanges()
     }
@@ -50,7 +53,7 @@ class SelectLanesTableViewController: UITableViewController {
     }
     
     @objc func onNext() {
-        let selectedPredefinedLanes = viewModel.selectedPredefinedLanes(from: tableView)
+        let selectedPredefinedLanes = viewModel.selectedLanes(from: tableView)
         let trackCreationService = (navigationController as? TrackNavigationViewController)?.trackCreationService
         trackCreationService?.addLanes(lanes: selectedPredefinedLanes)
         trackCreationService?.saveTrack()
@@ -104,7 +107,7 @@ extension SelectLanesTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! LaneTableViewCell
+//        let cell = tableView.cellForRow(at: indexPath) as! LaneTableViewCell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -137,7 +140,6 @@ extension SelectLanesTableViewController {
 extension SelectLanesTableViewController: LaneDetailViewControllerDelegate {
     
     func didCreateLane(mode: LaneDetailViewModel.Mode, lane: LaneModel) {
-        guard let trackCreationService = (navigationController as? TrackNavigationViewController)?.trackCreationService else { return }
-        viewModel.didAddTemporary(lane: lane, in: trackCreationService)
+        viewModel.didAddTemporary(lane: lane)
     }
 }

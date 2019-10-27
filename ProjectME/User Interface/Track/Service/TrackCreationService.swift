@@ -34,8 +34,9 @@ class TrackCreationService {
                 lClone.updatedAt = Date.getDateInTimezone()
                 lClone.system = false
                 buildingTrackModel.addToLanes(lClone)
-            } else {
-                buildingTrackModel.addToLanes(lane)
+            }
+            if lane.temporary {
+                // do nothing, as the temporary lanes are already in the lanes set.
             }
         }
     }

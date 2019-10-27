@@ -19,28 +19,34 @@ class SelectLanesTableViewModel {
     var lanes: BehaviorRelay<[LaneModel]> = BehaviorRelay(value: [])
     
     var disposeBag: DisposeBag = DisposeBag()
+    var trackCreationService: TrackCreationService?
     
     init() {
-        setPredefinedLanes()
+        setLanes()
     }
     
-    func setPredefinedLanes() {
+    func setLanes() {
         let predefinedLanes: [LaneModel] = CoreDataService.shared.get().filter { lane -> Bool in
-            return lane.system
+            return lane.system || lane.premium
         }
-        self.lanes.accept(predefinedLanes)
+        var temporaryLanes: [LaneModel] = []
+        if let lanes = trackCreationService?.buildingTrackModel.lanes?.allObjects as? [LaneModel] {
+            temporaryLanes = lanes
+        }
+        self.lanes.accept(temporaryLanes + predefinedLanes)
     }
     
-    func selectedPredefinedLanes(from table: UITableView) -> [LaneModel] {
-        var selectedPredefinedLanes: [LaneModel] = []
+    func selectedLanes(from table: UITableView) -> [LaneModel] {
+        var selectedLanes: [LaneModel] = []
         
         for selectedIndexPath in table.indexPathsForSelectedRows ?? [] {
-            selectedPredefinedLanes.append(lanes.value[selectedIndexPath.row])
+            selectedLanes.append(lanes.value[selectedIndexPath.row])
         }
-        return selectedPredefinedLanes
+        return selectedLanes
     }
     
-    func didAddTemporary(lane: LaneModel, in trackCreationService: TrackCreationService) {
-        trackCreationService.buildingTrackModel.addToLanes(lane)
+    func didAddTemporary(lane: LaneModel) {
+        trackCreationService?.buildingTrackModel.addToLanes(lane)
+        setLanes()
     }
 }

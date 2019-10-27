@@ -18,6 +18,14 @@ extension LaneModel {
         return (system == false) && (premium == false) && (locked == true)
     }
     
+    var isSystem: Bool {
+        return (system == true)
+    }
+    
+    var isLockedSystem: Bool {
+        return (system == true) && (locked == true)
+    }
+    
     var isPremium: Bool {
         return (premium == true)
     }

@@ -69,6 +69,7 @@ class LaneDetailViewModel {
         lane.system = false
         lane.premium = false
         lane.locked = false
+        lane.temporary = true
         lane.unitSystemIdentifier = unit.rawValue
         return lane
     }
