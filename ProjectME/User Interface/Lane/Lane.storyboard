@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,25 +11,25 @@
             <objects>
                 <viewController storyboardIdentifier="LaneDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UHf-29-9hW" customClass="LaneDetailViewController" customModule="ProjectME" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Yl-9U-wB7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7q6-Kx-9Kt" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="94" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="q0A-kx-2yy"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeM-Zj-SOi" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="160" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="116" width="600" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MMo-2E-feC"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6K-aa-08B" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="210" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="166" width="600" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="epM-ot-Lfv"/>
@@ -54,8 +53,8 @@
                     <navigationItem key="navigationItem" id="s24-52-BKw"/>
                     <connections>
                         <outlet property="laneNameTextFieldWithLabel" destination="7q6-Kx-9Kt" id="U1G-jf-acm"/>
+                        <outlet property="laneUnitCategoryTextFieldWithLabel" destination="AeM-Zj-SOi" id="0SA-HI-qNU"/>
                         <outlet property="laneUnitTextFieldWithLabel" destination="s6K-aa-08B" id="StB-lO-fqJ"/>
-                        <outlet property="laneUnitsTextFieldWithLabel" destination="AeM-Zj-SOi" id="0SA-HI-qNU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uB3-de-Gux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -67,15 +66,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="SelectPredefinedLanesTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e1V-wP-Eb9" customClass="SelectLanesTableViewController" customModule="ProjectME" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kus-fE-dUd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Rpp-T0-u8M">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rpp-T0-u8M" id="Bt2-x8-YLR">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

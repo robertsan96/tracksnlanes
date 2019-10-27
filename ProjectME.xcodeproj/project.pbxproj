@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		37E6AC93F37B8421B4B41842 /* Pods_ProjectME_ProjectMEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B3F9C7EC27886215840D7D /* Pods_ProjectME_ProjectMEUITests.framework */; };
+		462FB3712365AA9E00907C3D /* TextFieldWithLabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462FB3702365AA9E00907C3D /* TextFieldWithLabelViewModel.swift */; };
+		462FB3752365AB1A00907C3D /* TextFieldWithLabelPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462FB3742365AB1A00907C3D /* TextFieldWithLabelPickerViewModel.swift */; };
 		46595500235AE43C002347F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465954FF235AE43C002347F9 /* AppDelegate.swift */; };
 		46595502235AE43D002347F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595501235AE43D002347F9 /* SceneDelegate.swift */; };
 		46595504235AE43D002347F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595503235AE43D002347F9 /* ViewController.swift */; };
@@ -84,6 +86,8 @@
 /* Begin PBXFileReference section */
 		03419E860CB0897300E08897 /* Pods-ProjectME-ProjectMEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME-ProjectMEUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectME-ProjectMEUITests/Pods-ProjectME-ProjectMEUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		18B3F9C7EC27886215840D7D /* Pods_ProjectME_ProjectMEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectME_ProjectMEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		462FB3702365AA9E00907C3D /* TextFieldWithLabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithLabelViewModel.swift; sourceTree = "<group>"; };
+		462FB3742365AB1A00907C3D /* TextFieldWithLabelPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithLabelPickerViewModel.swift; sourceTree = "<group>"; };
 		465954FC235AE43C002347F9 /* ProjectME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		465954FF235AE43C002347F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46595501235AE43D002347F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +183,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		462FB3722365AAA100907C3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46595591235B4DAD002347F9 /* TextFieldWithLabel.xib */,
+				4659558D235B4B27002347F9 /* TextFieldWithLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		462FB3732365AAA500907C3D /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				462FB3702365AA9E00907C3D /* TextFieldWithLabelViewModel.swift */,
+				462FB3742365AB1A00907C3D /* TextFieldWithLabelPickerViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		465954F3235AE43C002347F9 = {
 			isa = PBXGroup;
 			children = (
@@ -440,8 +462,8 @@
 		4659558A235B4B0C002347F9 /* Textfield with Label */ = {
 			isa = PBXGroup;
 			children = (
-				46595591235B4DAD002347F9 /* TextFieldWithLabel.xib */,
-				4659558D235B4B27002347F9 /* TextFieldWithLabel.swift */,
+				462FB3732365AAA500907C3D /* View Models */,
+				462FB3722365AAA100907C3D /* Views */,
 			);
 			path = "Textfield with Label";
 			sourceTree = "<group>";
@@ -832,6 +854,7 @@
 				46595584235B45A3002347F9 /* LaneDetailViewModel.swift in Sources */,
 				46595586235B49FE002347F9 /* UITextField+Designables.swift in Sources */,
 				465955D8235CA542002347F9 /* LaneTableViewCell.swift in Sources */,
+				462FB3752365AB1A00907C3D /* TextFieldWithLabelPickerViewModel.swift in Sources */,
 				465955BE235BB264002347F9 /* TrackDetailViewModel.swift in Sources */,
 				465955A3235B620C002347F9 /* TrackKilogramsViewModel.swift in Sources */,
 				46595598235B57B8002347F9 /* LaneViewModel.swift in Sources */,
@@ -845,6 +868,7 @@
 				465955A8235B649D002347F9 /* ResourceType.swift in Sources */,
 				4659556E235B24BD002347F9 /* Date+CurrentDate.swift in Sources */,
 				46595539235AE4F3002347F9 /* PageViewModel.swift in Sources */,
+				462FB3712365AA9E00907C3D /* TextFieldWithLabelViewModel.swift in Sources */,
 				4659556C235B2002002347F9 /* String+GetDate.swift in Sources */,
 				4659554A235B0AC7002347F9 /* LengthUnits.swift in Sources */,
 				465955C2235BBA2A002347F9 /* SelectLanesTableViewModel.swift in Sources */,

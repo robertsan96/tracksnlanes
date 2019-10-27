@@ -35,7 +35,16 @@ class SelectLanesTableViewController: UITableViewController {
     }
 
     @objc func onCreateCustomLane() {
-        
+        guard let trackCreationService = (navigationController as? TrackNavigationViewController)?.trackCreationService else {
+            return
+        }
+        let laneNVC = try! Storyboard.getVC(with: "LaneNavigationViewController", in: .lane) as! UINavigationController
+        let laneVC = try! Storyboard.getVC(with: "LaneDetailViewController", in: .lane) as! LaneDetailViewController
+        let laneVM = LaneDetailViewModel(track: trackCreationService.buildingTrackModel)
+        laneVC.viewModel = laneVM
+        laneNVC.viewControllers = [laneVC]
+        laneVC.delegate = self
+        present(laneNVC, animated: true, completion: nil)
     }
     
     @objc func onNext() {
@@ -120,5 +129,13 @@ extension SelectLanesTableViewController {
         
         tableHeaderView.addSubview(tableHeader)
         tableView.tableHeaderView = tableHeaderView
+    }
+}
+
+extension SelectLanesTableViewController: LaneDetailViewControllerDelegate {
+    
+    func didCreateLane(mode: LaneDetailViewModel.Mode, lane: LaneModel) {
+        viewModel.predefinedLanes.accept(viewModel.predefinedLanes.value + [lane])
+        tableView.reloadData()
     }
 }

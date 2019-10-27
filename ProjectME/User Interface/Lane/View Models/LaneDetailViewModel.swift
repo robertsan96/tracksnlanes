@@ -13,7 +13,7 @@ import RxCocoa
 class LaneDetailViewModel {
     
     enum Mode {
-        case create, edit
+        case create, createWithoutSave, edit
     }
     
     var mode: BehaviorRelay<Mode> = BehaviorRelay(value: .create)
@@ -28,5 +28,10 @@ class LaneDetailViewModel {
     init(track: TrackModel) {
         self.mode.accept(.create)
         self.track = BehaviorRelay(value: track)
+    }
+    
+    init(buildingTrack: TrackModel) {
+        self.mode.accept(.createWithoutSave)
+        self.track = BehaviorRelay(value: buildingTrack)
     }
 }
