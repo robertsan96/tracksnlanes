@@ -13,9 +13,11 @@ import RxCocoa
 class TextFieldWithLabelPickerViewModel: TextFieldWithLabelViewModel {
     
     var pickerData: BehaviorRelay<[String]> = BehaviorRelay(value: [])
+    var pickerSelectedRow: Int = 0
     
-    init(with data: [String]) {
+    init(with data: [String], selectDataAt row: Int = 0) {
         super.init(with: .textFieldWithPicker)
         pickerData.accept(data)
+        pickerSelectedRow = row
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,53 +12,123 @@
             <objects>
                 <viewController storyboardIdentifier="LaneDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UHf-29-9hW" customClass="LaneDetailViewController" customModule="ProjectME" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Yl-9U-wB7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7q6-Kx-9Kt" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="600" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiY-rK-VbX">
+                                <rect key="frame" x="20" y="52" width="374" height="14.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ff-Tl-rx7">
+                                <rect key="frame" x="0.0" y="83" width="414" height="813"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qp-zY-FLz" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6K-aa-08B" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="240" width="414" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="epM-ot-Lfv"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeM-Zj-SOi" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="190" width="414" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="MMo-2E-feC"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udu-iz-k68" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="124" width="414" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Gf5-be-FVW"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N5f-lo-Sui" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="74" width="414" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Kav-Nd-RNJ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7q6-Kx-9Kt" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="8" width="414" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="q0A-kx-2yy"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="N5f-lo-Sui" firstAttribute="top" secondItem="7q6-Kx-9Kt" secondAttribute="bottom" constant="16" id="39I-8K-dfp"/>
+                                            <constraint firstItem="7q6-Kx-9Kt" firstAttribute="leading" secondItem="4Qp-zY-FLz" secondAttribute="leading" id="6ZF-Y5-J8G"/>
+                                            <constraint firstAttribute="trailing" secondItem="s6K-aa-08B" secondAttribute="trailing" id="6p0-Td-mbB"/>
+                                            <constraint firstAttribute="bottom" secondItem="s6K-aa-08B" secondAttribute="bottom" constant="270" id="AFo-mL-avm"/>
+                                            <constraint firstItem="N5f-lo-Sui" firstAttribute="leading" secondItem="4Qp-zY-FLz" secondAttribute="leading" id="JGU-ON-HJp"/>
+                                            <constraint firstItem="AeM-Zj-SOi" firstAttribute="top" secondItem="Udu-iz-k68" secondAttribute="bottom" constant="16" id="KH4-x2-XWu"/>
+                                            <constraint firstItem="s6K-aa-08B" firstAttribute="top" secondItem="AeM-Zj-SOi" secondAttribute="bottom" id="Kqc-Xu-gEJ"/>
+                                            <constraint firstItem="Udu-iz-k68" firstAttribute="leading" secondItem="4Qp-zY-FLz" secondAttribute="leading" id="NSF-bB-qJZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="AeM-Zj-SOi" secondAttribute="trailing" id="SUR-VZ-Oca"/>
+                                            <constraint firstAttribute="trailing" secondItem="N5f-lo-Sui" secondAttribute="trailing" id="Vd6-gU-VwO"/>
+                                            <constraint firstItem="Udu-iz-k68" firstAttribute="top" secondItem="N5f-lo-Sui" secondAttribute="bottom" id="aOL-GT-0yi"/>
+                                            <constraint firstAttribute="trailing" secondItem="7q6-Kx-9Kt" secondAttribute="trailing" id="dvR-07-g81"/>
+                                            <constraint firstItem="7q6-Kx-9Kt" firstAttribute="top" secondItem="4Qp-zY-FLz" secondAttribute="top" constant="8" id="fcP-5Y-KJA"/>
+                                            <constraint firstItem="Udu-iz-k68" firstAttribute="top" secondItem="N5f-lo-Sui" secondAttribute="bottom" id="m7l-C9-uRU"/>
+                                            <constraint firstAttribute="trailing" secondItem="Udu-iz-k68" secondAttribute="trailing" id="mRb-Dp-89P"/>
+                                            <constraint firstItem="AeM-Zj-SOi" firstAttribute="leading" secondItem="4Qp-zY-FLz" secondAttribute="leading" id="qOt-js-1z5"/>
+                                            <constraint firstItem="s6K-aa-08B" firstAttribute="leading" secondItem="4Qp-zY-FLz" secondAttribute="leading" id="woo-hO-2gA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="q0A-kx-2yy"/>
+                                    <constraint firstItem="4Qp-zY-FLz" firstAttribute="top" secondItem="6ff-Tl-rx7" secondAttribute="top" id="FSK-4E-7bf"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Qp-zY-FLz" secondAttribute="trailing" id="OdT-jN-Tga"/>
+                                    <constraint firstItem="4Qp-zY-FLz" firstAttribute="leading" secondItem="6ff-Tl-rx7" secondAttribute="leading" id="Zaf-Li-B7R"/>
+                                    <constraint firstItem="4Qp-zY-FLz" firstAttribute="width" secondItem="6ff-Tl-rx7" secondAttribute="width" id="oaI-cG-XZP"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Qp-zY-FLz" secondAttribute="bottom" id="uco-S0-Wnj"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeM-Zj-SOi" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="116" width="600" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="MMo-2E-feC"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6K-aa-08B" customClass="TextFieldWithLabel" customModule="ProjectME" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="166" width="600" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="epM-ot-Lfv"/>
-                                </constraints>
-                            </view>
+                                <viewLayoutGuide key="contentLayoutGuide" id="nYR-HU-dCl"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="gwg-bg-Rtw"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="7q6-Kx-9Kt" firstAttribute="top" secondItem="Dim-41-Xxo" secondAttribute="top" constant="50" id="4Ep-km-Smo"/>
-                            <constraint firstItem="AeM-Zj-SOi" firstAttribute="top" secondItem="7q6-Kx-9Kt" secondAttribute="bottom" constant="16" id="Cyc-Mu-F7U"/>
-                            <constraint firstItem="AeM-Zj-SOi" firstAttribute="leading" secondItem="Dim-41-Xxo" secondAttribute="leading" id="JNJ-OQ-MdS"/>
-                            <constraint firstItem="7q6-Kx-9Kt" firstAttribute="leading" secondItem="Dim-41-Xxo" secondAttribute="leading" id="MQn-6t-7cP"/>
-                            <constraint firstItem="AeM-Zj-SOi" firstAttribute="trailing" secondItem="Dim-41-Xxo" secondAttribute="trailing" id="SFd-sI-NEQ"/>
-                            <constraint firstItem="7q6-Kx-9Kt" firstAttribute="trailing" secondItem="Dim-41-Xxo" secondAttribute="trailing" id="ptN-Yb-gV9"/>
-                            <constraint firstItem="s6K-aa-08B" firstAttribute="leading" secondItem="Dim-41-Xxo" secondAttribute="leading" id="ubN-8T-jaa"/>
-                            <constraint firstItem="s6K-aa-08B" firstAttribute="top" secondItem="AeM-Zj-SOi" secondAttribute="bottom" id="urR-0t-OSS"/>
-                            <constraint firstItem="s6K-aa-08B" firstAttribute="trailing" secondItem="Dim-41-Xxo" secondAttribute="trailing" id="ypS-UX-f6J"/>
+                            <constraint firstItem="TiY-rK-VbX" firstAttribute="top" secondItem="Dim-41-Xxo" secondAttribute="top" constant="8" id="Eoh-Gk-WPp"/>
+                            <constraint firstItem="6ff-Tl-rx7" firstAttribute="top" secondItem="TiY-rK-VbX" secondAttribute="bottom" constant="16" id="GR4-mD-Smb"/>
+                            <constraint firstItem="6ff-Tl-rx7" firstAttribute="leading" secondItem="Dim-41-Xxo" secondAttribute="leading" id="JCo-ga-Zpk"/>
+                            <constraint firstItem="6ff-Tl-rx7" firstAttribute="trailing" secondItem="Dim-41-Xxo" secondAttribute="trailing" id="cub-VD-Eyw"/>
+                            <constraint firstItem="TiY-rK-VbX" firstAttribute="leading" secondItem="Dim-41-Xxo" secondAttribute="leading" constant="20" id="foC-Zk-4VH"/>
+                            <constraint firstAttribute="bottom" secondItem="6ff-Tl-rx7" secondAttribute="bottom" id="lav-s1-2xU"/>
+                            <constraint firstItem="Dim-41-Xxo" firstAttribute="trailing" secondItem="TiY-rK-VbX" secondAttribute="trailing" constant="20" id="sVh-3u-Mb0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dim-41-Xxo"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ds3-Q4-R5h" appends="YES" id="Fd0-VR-Xtt"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="s24-52-BKw"/>
                     <connections>
+                        <outlet property="laneDetailTextFieldWithLabel" destination="N5f-lo-Sui" id="c5E-Om-6hA"/>
+                        <outlet property="laneLongDetailTextFieldWithLabel" destination="Udu-iz-k68" id="yIz-tw-I9m"/>
                         <outlet property="laneNameTextFieldWithLabel" destination="7q6-Kx-9Kt" id="U1G-jf-acm"/>
                         <outlet property="laneUnitCategoryTextFieldWithLabel" destination="AeM-Zj-SOi" id="0SA-HI-qNU"/>
                         <outlet property="laneUnitTextFieldWithLabel" destination="s6K-aa-08B" id="StB-lO-fqJ"/>
+                        <outlet property="scrollView" destination="6ff-Tl-rx7" id="R5M-zp-I8O"/>
+                        <outlet property="viewControllerDescriptionLabel" destination="TiY-rK-VbX" id="KeG-pO-gRt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uB3-de-Gux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ds3-Q4-R5h">
+                    <connections>
+                        <action selector="onBackgroundTap:" destination="UHf-29-9hW" id="R3Z-1c-Ch2"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="879.71014492753625" y="158.70535714285714"/>
         </scene>
@@ -66,15 +137,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="SelectPredefinedLanesTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e1V-wP-Eb9" customClass="SelectLanesTableViewController" customModule="ProjectME" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kus-fE-dUd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Rpp-T0-u8M">
-                                <rect key="frame" x="0.0" y="28" width="600" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rpp-T0-u8M" id="Bt2-x8-YLR">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

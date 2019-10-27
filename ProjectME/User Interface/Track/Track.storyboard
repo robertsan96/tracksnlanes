@@ -23,7 +23,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="003-Fq-Db0">
-                                <rect key="frame" x="10" y="152" width="394" height="136"/>
+                                <rect key="frame" x="20" y="152" width="374" height="136"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="136" id="gZL-Co-dB7"/>
                                 </constraints>
@@ -38,8 +38,8 @@ Almost everybody has a "Weight Loss" track made of the following lanes: Weight, 
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="003-Fq-Db0" firstAttribute="top" secondItem="d3c-fb-thb" secondAttribute="bottom" constant="8" id="9ur-ZG-8bi"/>
-                            <constraint firstItem="SMz-Nx-hIG" firstAttribute="trailing" secondItem="003-Fq-Db0" secondAttribute="trailing" constant="10" id="PJY-lt-pMa"/>
-                            <constraint firstItem="003-Fq-Db0" firstAttribute="leading" secondItem="SMz-Nx-hIG" secondAttribute="leading" constant="10" id="k4B-nk-Xzg"/>
+                            <constraint firstItem="SMz-Nx-hIG" firstAttribute="trailing" secondItem="003-Fq-Db0" secondAttribute="trailing" constant="20" id="PJY-lt-pMa"/>
+                            <constraint firstItem="003-Fq-Db0" firstAttribute="leading" secondItem="SMz-Nx-hIG" secondAttribute="leading" constant="20" id="k4B-nk-Xzg"/>
                             <constraint firstItem="d3c-fb-thb" firstAttribute="top" secondItem="SMz-Nx-hIG" secondAttribute="top" constant="50" id="llg-lK-GEJ"/>
                             <constraint firstItem="d3c-fb-thb" firstAttribute="leading" secondItem="SMz-Nx-hIG" secondAttribute="leading" id="oAE-bd-K7j"/>
                             <constraint firstItem="d3c-fb-thb" firstAttribute="trailing" secondItem="SMz-Nx-hIG" secondAttribute="trailing" id="xmT-ha-4Yg"/>

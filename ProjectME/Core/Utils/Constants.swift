@@ -73,6 +73,21 @@ enum UnitSystemCategoryIdentifier: String {
     case time = "USC_TIME"
     case length = "USC_LENGTH"
     
+    static func getAll() -> [UnitSystemCategoryIdentifier] {
+        return [.mass, .time, .length]
+    }
+    
+    static func getUnitSystemCategoryIdentifier(for description: String?) -> UnitSystemCategoryIdentifier? {
+        guard description != nil else { return nil }
+        switch description {
+        case UnitSystemCategoryIdentifier.mass.description(): return .mass
+        case UnitSystemCategoryIdentifier.time.description(): return .time
+        case UnitSystemCategoryIdentifier.length.description(): return .length
+
+        default: return nil
+        }
+    }
+    
     func getUnitSystems() -> [UnitSystemIdentifier] {
         switch self {
         case .mass: return [.kilogram, .pound, .gram]

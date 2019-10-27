@@ -14,9 +14,21 @@ protocol LaneDetailViewControllerDelegate: class {
 
 class LaneDetailViewController: UIViewController {
     
+    enum TextFields: Int {
+        case name
+        case descriptionShort
+        case descriptionLong
+        case unitCategory
+        case unit
+    }
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var laneNameTextFieldWithLabel: TextFieldWithLabel!
+    @IBOutlet weak var laneDetailTextFieldWithLabel: TextFieldWithLabel!
+    @IBOutlet weak var laneLongDetailTextFieldWithLabel: TextFieldWithLabel!
     @IBOutlet weak var laneUnitCategoryTextFieldWithLabel: TextFieldWithLabel!
     @IBOutlet weak var laneUnitTextFieldWithLabel: TextFieldWithLabel!
+    @IBOutlet weak var viewControllerDescriptionLabel: UILabel!
     
     weak var delegate: LaneDetailViewControllerDelegate?
     var viewModel: LaneDetailViewModel!
@@ -26,24 +38,73 @@ class LaneDetailViewController: UIViewController {
         
         laneNameTextFieldWithLabel.label.text = "Name"
         laneNameTextFieldWithLabel.textField.placeholder = "Weight Loss Tracker"
+        laneNameTextFieldWithLabel.textField.delegate = self
+        laneNameTextFieldWithLabel.textField.tag = TextFields.name.rawValue
+        laneNameTextFieldWithLabel.textField.becomeFirstResponder()
+        
+        laneDetailTextFieldWithLabel.label.text = "Detail"
+        laneDetailTextFieldWithLabel.textField.placeholder = "I'll log my weight in this lane."
+        laneDetailTextFieldWithLabel.textField.delegate = self
+        laneDetailTextFieldWithLabel.textField.tag = TextFields.descriptionShort.rawValue
+        
+        laneLongDetailTextFieldWithLabel.label.text = "Long Detail"
+        laneLongDetailTextFieldWithLabel.textField.placeholder = "I'll log my weight in this lane every Monday morning at 6 am, right after I jump out of the bed."
+        laneLongDetailTextFieldWithLabel.textField.delegate = self
+        laneLongDetailTextFieldWithLabel.textField.tag = TextFields.descriptionLong.rawValue
         
         laneUnitCategoryTextFieldWithLabel.label.text = "Type"
-        laneUnitCategoryTextFieldWithLabel.textField.text = "Mass"
-        laneUnitCategoryTextFieldWithLabel.viewModel.accept(TextFieldWithLabelPickerViewModel(with: ["Mass", "Distance"]))
-        laneUnitCategoryTextFieldWithLabel.observe()
-        
-        laneUnitTextFieldWithLabel.label.text = "Main Unit"
-        laneUnitTextFieldWithLabel.textField.text = "Kilogram"
-        
-        observeChanges()
+        laneUnitCategoryTextFieldWithLabel
+            .viewModel
+            .accept(TextFieldWithLabelPickerViewModel(with: viewModel.getUnitCategoryNames()))
+        laneUnitCategoryTextFieldWithLabel.textField.tag = TextFields.unitCategory.rawValue
+        laneUnitCategoryTextFieldWithLabel.delegate = self
+
+        laneUnitTextFieldWithLabel.label.text = "Unit"
+        laneUnitTextFieldWithLabel
+            .viewModel
+            .accept(TextFieldWithLabelPickerViewModel(with: viewModel.getUnitNames(for: .mass)))
+        laneUnitTextFieldWithLabel.textField.tag = TextFields.unit.rawValue
+        laneUnitTextFieldWithLabel.delegate = self
+
+        observe()
+    }
+    
+    @IBAction func onBackgroundTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    @objc func didPressSave() {
+        switch viewModel.mode.value {
+        case .create: break
+        case .createWithoutSave:
+            break
+        case .edit: break
+        }
     }
 }
 
 extension LaneDetailViewController {
     
-    func observeChanges() {
+    func observe() {
         viewModel.mode.subscribe(onNext: { [weak self] mode in
-            self?.update(to: mode)
+            guard let `self` = self else { return }
+            self.update(to: mode)
+            
+        }).disposed(by: viewModel.disposeBag)
+        
+        laneUnitCategoryTextFieldWithLabel
+            .textField
+            .rx
+            .text
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] text in
+                guard let vm = self?.viewModel else { return }
+                guard let category = UnitSystemCategoryIdentifier.getUnitSystemCategoryIdentifier(for: text) else {
+                    return
+                }
+                self?.laneUnitTextFieldWithLabel
+                    .viewModel
+                    .accept(TextFieldWithLabelPickerViewModel(with: vm.getUnitNames(for: category)))
         }).disposed(by: viewModel.disposeBag)
     }
     
@@ -52,12 +113,41 @@ extension LaneDetailViewController {
         case .create:
             title = "New Lane"
         case .createWithoutSave:
-            // update :))
-            let lane = LaneModel(context: CoreDataService.shared.context)
-            lane.name = laneNameTextFieldWithLabel.textField.text
-            delegate?.didCreateLane(mode: viewModel.mode.value, lane: lane)
+            title = "Add Lane"
+            viewControllerDescriptionLabel.text = "This lane will temporary be saved to the track you're building. Keep in mind that if you cancel the track creation process, you'll lose this lane aswell."
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(self.didPressSave))
         case .edit:
             title = viewModel.track.value.name
+        }
+    }
+}
+
+extension LaneDetailViewController: UITextFieldDelegate, TextFieldWithLabelDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == TextFields.name.rawValue {
+            laneDetailTextFieldWithLabel.textField.becomeFirstResponder()
+        }
+        if textField.tag == TextFields.descriptionShort.rawValue {
+            laneLongDetailTextFieldWithLabel.textField.becomeFirstResponder()
+        }
+        if textField.tag == TextFields.descriptionLong.rawValue {
+            laneUnitCategoryTextFieldWithLabel.textField.becomeFirstResponder()
+            scrollView.scrollToBottom(animated: true)
+        }
+        if textField.tag == TextFields.unitCategory.rawValue {
+            laneUnitTextFieldWithLabel.textField.becomeFirstResponder()
+            scrollView.scrollToBottom(animated: true)
+        }
+        return true
+    }
+    
+    func picker(at textfield: UITextField, didSelect value: String) {
+        if textfield.tag == TextFields.unitCategory.rawValue {
+            laneUnitTextFieldWithLabel.textField.becomeFirstResponder()
+        }
+        if textfield.tag == TextFields.unit.rawValue {
+            view.endEditing(true)
         }
     }
 }

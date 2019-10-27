@@ -10,6 +10,11 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+protocol TextFieldWithLabelDelegate: class {
+    
+    func picker(at textField: UITextField, didSelect value: String)
+}
+
 class TextFieldWithLabel: UIView {
     
     @IBOutlet var contentView: UIView!
@@ -18,6 +23,8 @@ class TextFieldWithLabel: UIView {
     @IBOutlet weak var borderBottom: UIView!
     
     var pickerView: UIPickerView?
+    
+    weak var delegate: TextFieldWithLabelDelegate?
     
     var viewModel: BehaviorRelay<TextFieldWithLabelViewModel> = BehaviorRelay(value: TextFieldWithLabelViewModel())
     var disposeBag: DisposeBag = DisposeBag()
@@ -82,7 +89,9 @@ extension TextFieldWithLabel: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         guard let pickerVM = pickerVM else { return }
-        textField.text = pickerVM.pickerData.value[row]
+        textField.text = ""
+        textField.insertText(pickerVM.pickerData.value[row])
+        delegate?.picker(at: textField, didSelect: pickerVM.pickerData.value[row])
     }
 }
 
@@ -100,6 +109,9 @@ extension TextFieldWithLabel {
                 guard let pickerVM = self.pickerVM else { return }
                 pickerVM.pickerData.subscribe(onNext: { [weak self] _ in
                     self?.pickerView?.reloadAllComponents()
+                    self?.pickerView?.selectRow(pickerVM.pickerSelectedRow, inComponent: 0, animated: true)
+                    self?.textField.text = ""
+                    self?.textField.insertText(pickerVM.pickerData.value[pickerVM.pickerSelectedRow])
                 }).disposed(by: vm.disposeBag)
             }
         }).disposed(by: disposeBag)

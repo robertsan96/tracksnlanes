@@ -40,10 +40,12 @@ class SelectLanesTableViewController: UITableViewController {
         }
         let laneNVC = try! Storyboard.getVC(with: "LaneNavigationViewController", in: .lane) as! UINavigationController
         let laneVC = try! Storyboard.getVC(with: "LaneDetailViewController", in: .lane) as! LaneDetailViewController
-        let laneVM = LaneDetailViewModel(track: trackCreationService.buildingTrackModel)
+        let laneVM = LaneDetailViewModel(buildingTrack: trackCreationService.buildingTrackModel)
         laneVC.viewModel = laneVM
-        laneNVC.viewControllers = [laneVC]
+        laneNVC.pushViewController(laneVC, animated: true)
         laneVC.delegate = self
+        
+        laneNVC.navigationBar.prefersLargeTitles = true
         present(laneNVC, animated: true, completion: nil)
     }
     
