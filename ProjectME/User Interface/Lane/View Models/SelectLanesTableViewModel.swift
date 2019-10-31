@@ -34,7 +34,11 @@ class SelectLanesTableViewModel {
         }
         var temporaryLanes: [LaneModel] = []
         if let lanes = trackCreationService?.buildingTrackModel.lanes?.allObjects as? [LaneModel] {
-            temporaryLanes = lanes
+            let sorted = lanes.sorted { lhs, rhs -> Bool in
+                guard lhs.createdAt != nil, rhs.createdAt != nil else { return false }
+                return lhs.createdAt! > rhs.createdAt!
+            }
+            temporaryLanes = sorted
         }
         self.lanes.accept(temporaryLanes + predefinedLanes)
     }
@@ -50,6 +54,7 @@ class SelectLanesTableViewModel {
     
     func didAddTemporary(lane: LaneModel) {
         trackCreationService?.buildingTrackModel.addToLanes(lane)
+        didSelectLane(lane: lane)
         setLanes()
     }
     
