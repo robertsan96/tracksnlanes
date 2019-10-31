@@ -90,6 +90,12 @@ extension SelectLanesTableViewController {
         let lane = viewModel.lanes.value[indexPath.row]
         
         cell.load(lane: lane)
+        
+        if viewModel.laneIsSelected(lane: lane) {
+            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        } else {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
         return cell
     }
     
@@ -107,7 +113,14 @@ extension SelectLanesTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath) as! LaneTableViewCell
+        let lane = viewModel.lanes.value[indexPath.row]
+        viewModel.didSelectLane(lane: lane)
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let lane = viewModel.lanes.value[indexPath.row]
+        viewModel.didDeselectLane(lane: lane)
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

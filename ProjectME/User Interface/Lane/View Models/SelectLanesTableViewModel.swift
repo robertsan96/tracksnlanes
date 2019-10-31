@@ -21,6 +21,9 @@ class SelectLanesTableViewModel {
     var disposeBag: DisposeBag = DisposeBag()
     var trackCreationService: TrackCreationService?
     
+    /// Used to make the table selections persistent when you leave the screen.
+    lazy var selectedLanes: [LaneModel] = []
+    
     init() {
         setLanes()
     }
@@ -48,5 +51,24 @@ class SelectLanesTableViewModel {
     func didAddTemporary(lane: LaneModel) {
         trackCreationService?.buildingTrackModel.addToLanes(lane)
         setLanes()
+    }
+    
+    func didSelectLane(lane: LaneModel) {
+        selectedLanes.append(lane)
+    }
+    
+    func didDeselectLane(lane: LaneModel) {
+        let withoutLane = selectedLanes.filter { selectedLane -> Bool in
+            return lane.objectID !== selectedLane.objectID
+        }
+        selectedLanes = withoutLane
+    }
+    
+    func laneIsSelected(lane: LaneModel) -> Bool {
+        let exists = selectedLanes.filter { selectedLane -> Bool in
+            return lane.objectID == selectedLane.objectID
+        }.first
+        
+        return exists !== nil
     }
 }
