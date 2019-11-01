@@ -10,6 +10,8 @@ import UIKit
 
 class LaneHeaderViewController: UIViewController {
 
+    var viewModel: LaneHeaderViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

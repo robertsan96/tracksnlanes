@@ -20,25 +20,29 @@ class LaneControlLayOneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupLaneHeaderVC()
-        setupLaneValueChangerVC()
         observe()
     }
     
-    func setupLaneHeaderVC() {
+    /// Must be called as soon as we have the lane model.
+    func setupLaneHeaderVC(for lane: LaneModel) {
         laneHeaderView.backgroundColor = .clear
         
         let laneHeaderVC = LaneHeaderViewController()
+        let laneHeaderVM = LaneHeaderViewModel(with: lane)
+        laneHeaderVC.viewModel = laneHeaderVM
+        
         addChild(laneHeaderVC)
         laneHeaderView.addSubview(laneHeaderVC.view)
         laneHeaderVC.view.frame = laneHeaderView.bounds
         laneHeaderVC.didMove(toParent: self)
     }
     
-    func setupLaneValueChangerVC() {
+    /// Must be called as soon as we have the lane model. 
+    func setupLaneValueChangerVC(for lane: LaneModel) {
         laneValueChangerView.backgroundColor = .clear
         
         let laneValueChangerComponentVC = LaneValueChangerComponentViewController()
+        
         addChild(laneValueChangerComponentVC)
         laneValueChangerView.addSubview(laneValueChangerComponentVC.view)
         laneValueChangerComponentVC.view.frame = laneValueChangerView.bounds
@@ -51,9 +55,9 @@ extension LaneControlLayOneViewController {
     func observe() {
         guard let vm = viewModel else { return }
         vm.lane.subscribe(onNext: { [weak self] lane in
-            guard let `self` = self else { return }
-//            self.laneNameLabel.text = lane?.name
-//            self.laneShortDescriptionLabel.text = lane?.descriptionShort
+            guard let `self` = self, let lane = lane else { return }
+            self.setupLaneHeaderVC(for: lane)
+            self.setupLaneValueChangerVC(for: lane)
         }).disposed(by: vm.disposeBag)
     }
 }

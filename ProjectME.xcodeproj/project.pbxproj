@@ -16,6 +16,7 @@
 		4646BCBA236C1501000B1F98 /* LaneValueChangerComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4646BCB8236C1501000B1F98 /* LaneValueChangerComponentViewController.xib */; };
 		4646BCC6236C91DA000B1F98 /* LaneHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646BCC4236C91DA000B1F98 /* LaneHeaderViewController.swift */; };
 		4646BCC7236C91DA000B1F98 /* LaneHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4646BCC5236C91DA000B1F98 /* LaneHeaderViewController.xib */; };
+		4646BCCB236C936E000B1F98 /* LaneHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646BCCA236C936E000B1F98 /* LaneHeaderViewModel.swift */; };
 		46595500235AE43C002347F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465954FF235AE43C002347F9 /* AppDelegate.swift */; };
 		46595502235AE43D002347F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595501235AE43D002347F9 /* SceneDelegate.swift */; };
 		46595504235AE43D002347F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595503235AE43D002347F9 /* ViewController.swift */; };
@@ -104,6 +105,7 @@
 		4646BCB8236C1501000B1F98 /* LaneValueChangerComponentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaneValueChangerComponentViewController.xib; sourceTree = "<group>"; };
 		4646BCC4236C91DA000B1F98 /* LaneHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneHeaderViewController.swift; sourceTree = "<group>"; };
 		4646BCC5236C91DA000B1F98 /* LaneHeaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaneHeaderViewController.xib; sourceTree = "<group>"; };
+		4646BCCA236C936E000B1F98 /* LaneHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneHeaderViewModel.swift; sourceTree = "<group>"; };
 		465954FC235AE43C002347F9 /* ProjectME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		465954FF235AE43C002347F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46595501235AE43D002347F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -280,10 +282,27 @@
 		4646BCC3236C91BC000B1F98 /* Lane Header */ = {
 			isa = PBXGroup;
 			children = (
+				4646BCC8236C9355000B1F98 /* View Controllers */,
+				4646BCC9236C935E000B1F98 /* View Models */,
+			);
+			path = "Lane Header";
+			sourceTree = "<group>";
+		};
+		4646BCC8236C9355000B1F98 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				4646BCC4236C91DA000B1F98 /* LaneHeaderViewController.swift */,
 				4646BCC5236C91DA000B1F98 /* LaneHeaderViewController.xib */,
 			);
-			path = "Lane Header";
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4646BCC9236C935E000B1F98 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				4646BCCA236C936E000B1F98 /* LaneHeaderViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 		465954F3235AE43C002347F9 = {
@@ -954,6 +973,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				465955BA235BB226002347F9 /* TrackNavigationViewController.swift in Sources */,
+				4646BCCB236C936E000B1F98 /* LaneHeaderViewModel.swift in Sources */,
 				46595504235AE43D002347F9 /* ViewController.swift in Sources */,
 				465955CC235C7756002347F9 /* TrackCreationService.swift in Sources */,
 				46595584235B45A3002347F9 /* LaneDetailViewModel.swift in Sources */,
