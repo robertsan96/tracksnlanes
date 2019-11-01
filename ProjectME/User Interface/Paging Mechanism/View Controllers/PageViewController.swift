@@ -71,7 +71,7 @@ extension PageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        return UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "ViewController") as! ViewController
+        return try! Storyboard.getVC(with: "LaneControlLayOneViewController", in: .lane)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
