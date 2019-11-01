@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
 class LaneControlViewModel {
     
-    var lane: LaneModel
+    var lane: BehaviorRelay<LaneModel?> = BehaviorRelay(value: nil)
+    var disposeBag = DisposeBag()
     
     init(lane: LaneModel) {
-        self.lane = lane
+        self.lane.accept(lane)
     }
 }

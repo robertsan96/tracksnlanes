@@ -71,7 +71,12 @@ extension PageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        return try! Storyboard.getVC(with: "LaneControlLayOneViewController", in: .lane)
+        let vc = try! Storyboard.getVC(with: "LaneControlLayOneViewController", in: .lane) as? LaneControlLayOneViewController
+        let lanes = viewModel.track.value.lanes?.allObjects as? [LaneModel]
+        precondition(lanes != nil, "Has no lanes")
+        
+        vc?.viewModel = LaneControlViewModel(lane: lanes![0])
+        return vc
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
