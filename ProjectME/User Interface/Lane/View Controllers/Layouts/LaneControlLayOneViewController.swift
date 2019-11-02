@@ -43,6 +43,9 @@ class LaneControlLayOneViewController: UIViewController {
         laneValueChangerView.backgroundColor = .clear
         
         let laneValueChangerComponentVC = LaneNumericValueChangerViewController()
+        let laneValueChangerComponentVM = LaneNumericValueChangerViewModel(with: lane)
+        
+        laneValueChangerComponentVC.viewModel = laneValueChangerComponentVM
         
         addChild(laneValueChangerComponentVC)
         laneValueChangerView.addSubview(laneValueChangerComponentVC.view)
@@ -53,7 +56,7 @@ class LaneControlLayOneViewController: UIViewController {
     /// Must be called as soon as we have the lane model.
     func setupLaneValueViewerVC(for lane: LaneModel) {
         
-        laneValueViewerView.backgroundColor = .clear
+        laneValueViewerView.backgroundColor = .systemBackground
         
         let laneValueViewerComponentVC = LaneNumericViewerTableViewController()
         let laneValueViewerComponentVM = LaneNumericViewerViewModel(with: lane)

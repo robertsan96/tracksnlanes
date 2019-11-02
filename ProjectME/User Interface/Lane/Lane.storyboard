@@ -189,22 +189,20 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3OE-ac-sT5">
-                                                <rect key="frame" x="10" y="184" width="394" height="420"/>
+                                                <rect key="frame" x="0.0" y="160" width="414" height="550"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="420" id="PxN-N4-Nj3"/>
-                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="710" id="7tP-Kf-u5A"/>
-                                            <constraint firstAttribute="trailing" secondItem="3OE-ac-sT5" secondAttribute="trailing" constant="10" id="Ceh-Bg-ODY"/>
+                                            <constraint firstAttribute="trailing" secondItem="3OE-ac-sT5" secondAttribute="trailing" id="Ceh-Bg-ODY"/>
                                             <constraint firstItem="Dg0-Yc-giU" firstAttribute="top" secondItem="8b5-W0-P7K" secondAttribute="top" constant="8" id="H1d-Vt-Bbc"/>
-                                            <constraint firstItem="3OE-ac-sT5" firstAttribute="top" secondItem="Dg0-Yc-giU" secondAttribute="bottom" constant="32" id="JJM-cV-8N1"/>
-                                            <constraint firstItem="3OE-ac-sT5" firstAttribute="leading" secondItem="8b5-W0-P7K" secondAttribute="leading" constant="10" id="cRd-hj-GOq"/>
+                                            <constraint firstItem="3OE-ac-sT5" firstAttribute="top" secondItem="Dg0-Yc-giU" secondAttribute="bottom" constant="8" id="JJM-cV-8N1"/>
+                                            <constraint firstItem="3OE-ac-sT5" firstAttribute="leading" secondItem="8b5-W0-P7K" secondAttribute="leading" id="cRd-hj-GOq"/>
                                             <constraint firstItem="Dg0-Yc-giU" firstAttribute="leading" secondItem="8b5-W0-P7K" secondAttribute="leading" constant="10" id="eML-Lc-ucD"/>
                                             <constraint firstAttribute="trailing" secondItem="Dg0-Yc-giU" secondAttribute="trailing" constant="10" id="fTj-d7-fIB"/>
+                                            <constraint firstAttribute="bottom" secondItem="3OE-ac-sT5" secondAttribute="bottom" id="gGa-zm-EWu"/>
                                         </constraints>
                                     </view>
                                 </subviews>

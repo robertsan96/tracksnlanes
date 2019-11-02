@@ -47,6 +47,23 @@ class LaneNumericValueChangerViewController: UIViewController {
     
     @objc func didPressDone() {
         valueTextField.resignFirstResponder()
+        
+        #warning("Update lane value adding process")
+        let value = valueTextField.text
+        let newEntry = LaneEntryModel(context: CoreDataService.shared.context)
+        newEntry.createdAt = Date.getDateInTimezone()
+        newEntry.updatedAt = Date.getDateInTimezone()
+        
+        let valueEntry = LaneEntryValueModel(context: CoreDataService.shared.context)
+        valueEntry.value = value
+        valueEntry.createdAt = Date.getDateInTimezone()
+        valueEntry.updatedAt = Date.getDateInTimezone()
+        
+        newEntry.addToValues(valueEntry)
+        
+        viewModel!.lane.value.addToEntries(newEntry)
+        
+        CoreDataService.shared.store(object: viewModel!.lane.value)
     }
 }
 
