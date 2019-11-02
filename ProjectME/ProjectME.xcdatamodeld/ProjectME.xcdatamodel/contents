@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19A583" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LaneEntryImageModel" representedClassName="LaneEntryImageModel" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LaneEntryModel" inverseName="images" inverseEntity="LaneEntryModel"/>
+    </entity>
+    <entity name="LaneEntryModel" representedClassName="LaneEntryModel" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LaneEntryImageModel" inverseName="entry" inverseEntity="LaneEntryImageModel"/>
+        <relationship name="lane" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LaneModel" inverseName="entries" inverseEntity="LaneModel"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LaneEntryNoteModel" inverseName="entry" inverseEntity="LaneEntryNoteModel"/>
+        <relationship name="values" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LaneEntryValueModel" inverseName="entry" inverseEntity="LaneEntryValueModel"/>
+    </entity>
+    <entity name="LaneEntryNoteModel" representedClassName="LaneEntryNoteModel" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LaneEntryModel" inverseName="notes" inverseEntity="LaneEntryModel"/>
+    </entity>
+    <entity name="LaneEntryValueModel" representedClassName="LaneEntryValueModel" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="value" optional="YES" attributeType="String"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LaneEntryModel" inverseName="values" inverseEntity="LaneEntryModel"/>
+    </entity>
     <entity name="LaneModel" representedClassName="LaneModel" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descriptionLong" optional="YES" attributeType="String"/>
@@ -11,6 +37,7 @@
         <attribute name="temporary" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="unitSystemIdentifier" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LaneEntryModel" inverseName="lane" inverseEntity="LaneEntryModel"/>
         <relationship name="track" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="TrackModel" inverseName="lanes" inverseEntity="TrackModel"/>
     </entity>
     <entity name="TrackModel" representedClassName="TrackModel" syncable="YES" codeGenerationType="class">
@@ -21,7 +48,11 @@
         <relationship name="lanes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LaneModel" inverseName="track" inverseEntity="LaneModel" spotlightIndexingEnabled="YES"/>
     </entity>
     <elements>
-        <element name="LaneModel" positionX="-54" positionY="-9" width="128" height="208"/>
-        <element name="TrackModel" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="LaneEntryImageModel" positionX="7.140625" positionY="-3.32421875" width="128" height="103"/>
+        <element name="LaneEntryModel" positionX="-152.99609375" positionY="-101.4140625" width="128" height="133"/>
+        <element name="LaneEntryNoteModel" positionX="5.67578125" positionY="133.8515625" width="128" height="103"/>
+        <element name="LaneEntryValueModel" positionX="6.1796875" positionY="-139.3125" width="128" height="103"/>
+        <element name="LaneModel" positionX="-323.07421875" positionY="-206.66015625" width="128" height="223"/>
+        <element name="TrackModel" positionX="-506.1796875" positionY="-101.640625" width="128" height="118"/>
     </elements>
 </model>

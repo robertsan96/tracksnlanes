@@ -14,6 +14,7 @@ class LaneControlLayOneViewController: UIViewController {
 
     @IBOutlet weak var laneHeaderView: UIView!
     @IBOutlet weak var laneValueChangerView: UIView!
+    @IBOutlet weak var laneValueViewerView: UIView!
     
     var viewModel: LaneControlViewModel?
     
@@ -48,6 +49,21 @@ class LaneControlLayOneViewController: UIViewController {
         laneValueChangerComponentVC.view.frame = laneValueChangerView.bounds
         laneValueChangerComponentVC.didMove(toParent: self)
     }
+    
+    /// Must be called as soon as we have the lane model.
+    func setupLaneValueViewerVC(for lane: LaneModel) {
+        
+        laneValueViewerView.backgroundColor = .clear
+        
+        let laneValueViewerComponentVC = LaneNumericViewerTableViewController()
+        let laneValueViewerComponentVM = LaneNumericViewerViewModel(with: lane)
+        
+        laneValueViewerComponentVC.viewModel = laneValueViewerComponentVM
+        addChild(laneValueViewerComponentVC)
+        laneValueViewerView.addSubview(laneValueViewerComponentVC.view)
+        laneValueViewerComponentVC.view.frame = laneValueViewerView.bounds
+        laneValueViewerComponentVC.didMove(toParent: self)
+    }
 }
 
 extension LaneControlLayOneViewController {
@@ -58,6 +74,7 @@ extension LaneControlLayOneViewController {
             guard let `self` = self, let lane = lane else { return }
             self.setupLaneHeaderVC(for: lane)
             self.setupLaneValueChangerVC(for: lane)
+            self.setupLaneValueViewerVC(for: lane)
         }).disposed(by: vm.disposeBag)
     }
 }
