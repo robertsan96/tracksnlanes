@@ -16,6 +16,9 @@ class LaneControlLayOneViewController: UIViewController {
     @IBOutlet weak var laneValueChangerView: UIView!
     @IBOutlet weak var laneValueViewerView: UIView!
     
+    private var laneValueChangerVC: LaneNumericValueChangerViewController?
+    private var laneValueViewerVC: LaneNumericViewerTableViewController?
+    
     var viewModel: LaneControlViewModel?
     
     override func viewDidLoad() {
@@ -51,6 +54,9 @@ class LaneControlLayOneViewController: UIViewController {
         laneValueChangerView.addSubview(laneValueChangerComponentVC.view)
         laneValueChangerComponentVC.view.frame = laneValueChangerView.bounds
         laneValueChangerComponentVC.didMove(toParent: self)
+        
+        laneValueChangerComponentVC.delegate = self
+        self.laneValueChangerVC = laneValueChangerComponentVC
     }
     
     /// Must be called as soon as we have the lane model.
@@ -66,6 +72,15 @@ class LaneControlLayOneViewController: UIViewController {
         laneValueViewerView.addSubview(laneValueViewerComponentVC.view)
         laneValueViewerComponentVC.view.frame = laneValueViewerView.bounds
         laneValueViewerComponentVC.didMove(toParent: self)
+        
+        self.laneValueViewerVC = laneValueViewerComponentVC
+    }
+}
+
+extension LaneControlLayOneViewController: LaneNumericValueChangerDelegate {
+    
+    func didAddValue(vc: LaneNumericValueChangerViewController) {
+        laneValueViewerVC?.tableView.reloadData()
     }
 }
 
