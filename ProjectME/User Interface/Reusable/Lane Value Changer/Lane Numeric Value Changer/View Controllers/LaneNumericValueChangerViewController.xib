@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaneNumericValueChangerViewController" customModule="ProjectME" customModuleProvider="target">
             <connections>
+                <outlet property="valueTextField" destination="Jgg-74-0eR" id="hdZ-6Z-7qP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

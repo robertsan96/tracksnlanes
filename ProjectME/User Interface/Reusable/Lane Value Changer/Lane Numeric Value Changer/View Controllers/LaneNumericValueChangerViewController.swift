@@ -15,12 +15,38 @@ protocol LaneNumericValueChangerProtocol: class {
 
 class LaneNumericValueChangerViewController: UIViewController {
 
+    @IBOutlet weak var valueTextField: UITextField!
+    
+    var valueTextFieldToolbar: UIToolbar = UIToolbar()
     var viewModel: LaneNumericValueChangerViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupValueTextField()
+        
         observe()
+    }
+    
+    func setupValueTextField() {
+        /// Workaround so system won't throw constraint errors
+        var valueTextFieldToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0,
+                                                                       y: 0,
+                                                                       width: 0,
+                                                                       height: 0))
+        valueTextFieldToolbar.barStyle = .default
+        valueTextFieldToolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didPressDone))
+        ]
+        valueTextFieldToolbar.sizeToFit()
+        
+        valueTextField.inputAccessoryView = valueTextFieldToolbar
+    }
+    
+    @objc func didPressDone() {
+        valueTextField.resignFirstResponder()
     }
 }
 
