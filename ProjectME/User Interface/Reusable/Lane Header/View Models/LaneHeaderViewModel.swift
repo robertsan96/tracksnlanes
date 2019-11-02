@@ -14,6 +14,8 @@ class LaneHeaderViewModel {
     
     var lane: BehaviorRelay<LaneModel>
     
+    var disposeBag = DisposeBag()
+    
     init(with lane: LaneModel) {
         self.lane = BehaviorRelay(value: lane)
     }
