@@ -17,6 +17,10 @@
 		4646BCC6236C91DA000B1F98 /* LaneHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646BCC4236C91DA000B1F98 /* LaneHeaderViewController.swift */; };
 		4646BCC7236C91DA000B1F98 /* LaneHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4646BCC5236C91DA000B1F98 /* LaneHeaderViewController.xib */; };
 		4646BCCB236C936E000B1F98 /* LaneHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646BCCA236C936E000B1F98 /* LaneHeaderViewModel.swift */; };
+		4646BCD0236D9215000B1F98 /* LaneNumericValueChangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646BCCE236D9215000B1F98 /* LaneNumericValueChangerViewController.swift */; };
+		4646BCD1236D9215000B1F98 /* LaneNumericValueChangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4646BCCF236D9215000B1F98 /* LaneNumericValueChangerViewController.xib */; };
+		4646BCD5236D9274000B1F98 /* LaneValueChangerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646BCD4236D9274000B1F98 /* LaneValueChangerViewModel.swift */; };
+		4646BCD7236D928B000B1F98 /* LaneNumericValueChangerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646BCD6236D928B000B1F98 /* LaneNumericValueChangerViewModel.swift */; };
 		46595500235AE43C002347F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465954FF235AE43C002347F9 /* AppDelegate.swift */; };
 		46595502235AE43D002347F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595501235AE43D002347F9 /* SceneDelegate.swift */; };
 		46595504235AE43D002347F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595503235AE43D002347F9 /* ViewController.swift */; };
@@ -106,6 +110,10 @@
 		4646BCC4236C91DA000B1F98 /* LaneHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneHeaderViewController.swift; sourceTree = "<group>"; };
 		4646BCC5236C91DA000B1F98 /* LaneHeaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaneHeaderViewController.xib; sourceTree = "<group>"; };
 		4646BCCA236C936E000B1F98 /* LaneHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneHeaderViewModel.swift; sourceTree = "<group>"; };
+		4646BCCE236D9215000B1F98 /* LaneNumericValueChangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneNumericValueChangerViewController.swift; sourceTree = "<group>"; };
+		4646BCCF236D9215000B1F98 /* LaneNumericValueChangerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaneNumericValueChangerViewController.xib; sourceTree = "<group>"; };
+		4646BCD4236D9274000B1F98 /* LaneValueChangerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneValueChangerViewModel.swift; sourceTree = "<group>"; };
+		4646BCD6236D928B000B1F98 /* LaneNumericValueChangerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneNumericValueChangerViewModel.swift; sourceTree = "<group>"; };
 		465954FC235AE43C002347F9 /* ProjectME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		465954FF235AE43C002347F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46595501235AE43D002347F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -257,8 +265,8 @@
 		4646BCB6236C14D5000B1F98 /* Lane Value Changer */ = {
 			isa = PBXGroup;
 			children = (
-				4646BCBC236C1511000B1F98 /* View Models */,
-				4646BCBB236C150A000B1F98 /* View Controllers */,
+				4646BCCC236D91D9000B1F98 /* Base */,
+				4646BCCD236D91EF000B1F98 /* Lane Numeric Value Changer */,
 			);
 			path = "Lane Value Changer";
 			sourceTree = "<group>";
@@ -275,6 +283,7 @@
 		4646BCBC236C1511000B1F98 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				4646BCD4236D9274000B1F98 /* LaneValueChangerViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -301,6 +310,41 @@
 			isa = PBXGroup;
 			children = (
 				4646BCCA236C936E000B1F98 /* LaneHeaderViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		4646BCCC236D91D9000B1F98 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4646BCBC236C1511000B1F98 /* View Models */,
+				4646BCBB236C150A000B1F98 /* View Controllers */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4646BCCD236D91EF000B1F98 /* Lane Numeric Value Changer */ = {
+			isa = PBXGroup;
+			children = (
+				4646BCD3236D9221000B1F98 /* View Models */,
+				4646BCD2236D921D000B1F98 /* View Controllers */,
+			);
+			path = "Lane Numeric Value Changer";
+			sourceTree = "<group>";
+		};
+		4646BCD2236D921D000B1F98 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4646BCCE236D9215000B1F98 /* LaneNumericValueChangerViewController.swift */,
+				4646BCCF236D9215000B1F98 /* LaneNumericValueChangerViewController.xib */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4646BCD3236D9221000B1F98 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				4646BCD6236D928B000B1F98 /* LaneNumericValueChangerViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -835,6 +879,7 @@
 				46595562235B1473002347F9 /* HomeTrackTableViewCell.xib in Resources */,
 				4659550F235AE43D002347F9 /* LaunchScreen.storyboard in Resources */,
 				465955D6235C98FB002347F9 /* LaneTableViewCell.xib in Resources */,
+				4646BCD1236D9215000B1F98 /* LaneNumericValueChangerViewController.xib in Resources */,
 				465955A5235B6219002347F9 /* PredefinedLanes.storyboard in Resources */,
 				465DADFE2365E1E2007D0C63 /* TextViewWithLabel.xib in Resources */,
 				4659557E235B443F002347F9 /* Lane.storyboard in Resources */,
@@ -976,9 +1021,11 @@
 				4646BCCB236C936E000B1F98 /* LaneHeaderViewModel.swift in Sources */,
 				46595504235AE43D002347F9 /* ViewController.swift in Sources */,
 				465955CC235C7756002347F9 /* TrackCreationService.swift in Sources */,
+				4646BCD7236D928B000B1F98 /* LaneNumericValueChangerViewModel.swift in Sources */,
 				46595584235B45A3002347F9 /* LaneDetailViewModel.swift in Sources */,
 				46595586235B49FE002347F9 /* UITextField+Designables.swift in Sources */,
 				465955D8235CA542002347F9 /* LaneTableViewCell.swift in Sources */,
+				4646BCD5236D9274000B1F98 /* LaneValueChangerViewModel.swift in Sources */,
 				465DAE022365EC76007D0C63 /* LaneModel+Helpers.swift in Sources */,
 				465DADFB2365DFA3007D0C63 /* UIScrollView+ScrollToBottom.swift in Sources */,
 				462FB3752365AB1A00907C3D /* TextFieldWithLabelPickerViewModel.swift in Sources */,
@@ -998,6 +1045,7 @@
 				462FB3712365AA9E00907C3D /* TextFieldWithLabelViewModel.swift in Sources */,
 				4646BCC6236C91DA000B1F98 /* LaneHeaderViewController.swift in Sources */,
 				4659556C235B2002002347F9 /* String+GetDate.swift in Sources */,
+				4646BCD0236D9215000B1F98 /* LaneNumericValueChangerViewController.swift in Sources */,
 				4659554A235B0AC7002347F9 /* LengthUnits.swift in Sources */,
 				465955C2235BBA2A002347F9 /* SelectLanesTableViewModel.swift in Sources */,
 				46595536235AE4C1002347F9 /* PageViewController.swift in Sources */,
