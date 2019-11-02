@@ -30,10 +30,10 @@ class LaneNumericValueChangerViewController: UIViewController {
     
     func setupValueTextField() {
         /// Workaround so system won't throw constraint errors
-        var valueTextFieldToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0,
-                                                                       y: 0,
-                                                                       width: 0,
-                                                                       height: 0))
+        valueTextFieldToolbar = UIToolbar(frame: CGRect(x: 0,
+                                                        y: 0,
+                                                        width: 100,
+                                                        height: 100))
         valueTextFieldToolbar.barStyle = .default
         valueTextFieldToolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
