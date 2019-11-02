@@ -63,4 +63,10 @@ class LaneNumericEntryTableViewCell: UITableViewCell {
         load(with: entry)
     }
     
+    func load(with entry: LaneEntryModel, single: Bool) {
+        lowerTimelineLineView.isHidden = single
+        upperTimelineLineView.isHidden = single
+        load(with: entry)
+    }
+    
 }
