@@ -21,6 +21,11 @@
 		4646BCD1236D9215000B1F98 /* LaneNumericValueChangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4646BCCF236D9215000B1F98 /* LaneNumericValueChangerViewController.xib */; };
 		4646BCD5236D9274000B1F98 /* LaneValueChangerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646BCD4236D9274000B1F98 /* LaneValueChangerViewModel.swift */; };
 		4646BCD7236D928B000B1F98 /* LaneNumericValueChangerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646BCD6236D928B000B1F98 /* LaneNumericValueChangerViewModel.swift */; };
+		46499FC0236DA2B300687E20 /* LaneNumericViewerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46499FBF236DA2B300687E20 /* LaneNumericViewerViewModel.swift */; };
+		46499FC7236DA34A00687E20 /* LaneNumericViewerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46499FC5236DA34A00687E20 /* LaneNumericViewerTableViewController.swift */; };
+		46499FC8236DA34A00687E20 /* LaneNumericViewerTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46499FC6236DA34A00687E20 /* LaneNumericViewerTableViewController.xib */; };
+		46499FCC236DAEC600687E20 /* LaneNumericEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46499FCA236DAEC600687E20 /* LaneNumericEntryTableViewCell.swift */; };
+		46499FCD236DAEC600687E20 /* LaneNumericEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46499FCB236DAEC600687E20 /* LaneNumericEntryTableViewCell.xib */; };
 		46595500235AE43C002347F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465954FF235AE43C002347F9 /* AppDelegate.swift */; };
 		46595502235AE43D002347F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595501235AE43D002347F9 /* SceneDelegate.swift */; };
 		46595504235AE43D002347F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46595503235AE43D002347F9 /* ViewController.swift */; };
@@ -114,6 +119,11 @@
 		4646BCCF236D9215000B1F98 /* LaneNumericValueChangerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaneNumericValueChangerViewController.xib; sourceTree = "<group>"; };
 		4646BCD4236D9274000B1F98 /* LaneValueChangerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneValueChangerViewModel.swift; sourceTree = "<group>"; };
 		4646BCD6236D928B000B1F98 /* LaneNumericValueChangerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneNumericValueChangerViewModel.swift; sourceTree = "<group>"; };
+		46499FBF236DA2B300687E20 /* LaneNumericViewerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneNumericViewerViewModel.swift; sourceTree = "<group>"; };
+		46499FC5236DA34A00687E20 /* LaneNumericViewerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneNumericViewerTableViewController.swift; sourceTree = "<group>"; };
+		46499FC6236DA34A00687E20 /* LaneNumericViewerTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaneNumericViewerTableViewController.xib; sourceTree = "<group>"; };
+		46499FCA236DAEC600687E20 /* LaneNumericEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneNumericEntryTableViewCell.swift; sourceTree = "<group>"; };
+		46499FCB236DAEC600687E20 /* LaneNumericEntryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaneNumericEntryTableViewCell.xib; sourceTree = "<group>"; };
 		465954FC235AE43C002347F9 /* ProjectME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		465954FF235AE43C002347F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46595501235AE43D002347F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -347,6 +357,58 @@
 				4646BCD6236D928B000B1F98 /* LaneNumericValueChangerViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		46499FB6236DA24E00687E20 /* Lane Entry Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				46499FB7236DA26400687E20 /* Base */,
+				46499FB8236DA26D00687E20 /* Lane Numeric Viewer */,
+			);
+			path = "Lane Entry Viewer";
+			sourceTree = "<group>";
+		};
+		46499FB7236DA26400687E20 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		46499FB8236DA26D00687E20 /* Lane Numeric Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				46499FC9236DAEA300687E20 /* Views */,
+				46499FBA236DA27E00687E20 /* View Models */,
+				46499FB9236DA27B00687E20 /* View Controllers */,
+			);
+			path = "Lane Numeric Viewer";
+			sourceTree = "<group>";
+		};
+		46499FB9236DA27B00687E20 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				46499FC5236DA34A00687E20 /* LaneNumericViewerTableViewController.swift */,
+				46499FC6236DA34A00687E20 /* LaneNumericViewerTableViewController.xib */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		46499FBA236DA27E00687E20 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				46499FBF236DA2B300687E20 /* LaneNumericViewerViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		46499FC9236DAEA300687E20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46499FCA236DAEC600687E20 /* LaneNumericEntryTableViewCell.swift */,
+				46499FCB236DAEC600687E20 /* LaneNumericEntryTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		465954F3235AE43C002347F9 = {
@@ -606,6 +668,7 @@
 		46595587235B4AFB002347F9 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				46499FB6236DA24E00687E20 /* Lane Entry Viewer */,
 				4646BCC3236C91BC000B1F98 /* Lane Header */,
 				4646BCB6236C14D5000B1F98 /* Lane Value Changer */,
 				465DADFC2365E198007D0C63 /* TextView with Label */,
@@ -888,7 +951,9 @@
 				46595592235B4DAD002347F9 /* TextFieldWithLabel.xib in Resources */,
 				4659550C235AE43D002347F9 /* Assets.xcassets in Resources */,
 				46595507235AE43D002347F9 /* Main.storyboard in Resources */,
+				46499FC8236DA34A00687E20 /* LaneNumericViewerTableViewController.xib in Resources */,
 				465955B8235BB1DB002347F9 /* Track.storyboard in Resources */,
+				46499FCD236DAEC600687E20 /* LaneNumericEntryTableViewCell.xib in Resources */,
 				4646BCBA236C1501000B1F98 /* LaneValueChangerComponentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1017,6 +1082,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46499FC0236DA2B300687E20 /* LaneNumericViewerViewModel.swift in Sources */,
 				465955BA235BB226002347F9 /* TrackNavigationViewController.swift in Sources */,
 				4646BCCB236C936E000B1F98 /* LaneHeaderViewModel.swift in Sources */,
 				46595504235AE43D002347F9 /* ViewController.swift in Sources */,
@@ -1038,6 +1104,7 @@
 				46595573235B2AFD002347F9 /* HomeOptionModel.swift in Sources */,
 				46595580235B4472002347F9 /* LaneDetailViewController.swift in Sources */,
 				46595565235B1493002347F9 /* HomeOptionTableViewCell.swift in Sources */,
+				46499FCC236DAEC600687E20 /* LaneNumericEntryTableViewCell.swift in Sources */,
 				465955DB235CA684002347F9 /* Constants.swift in Sources */,
 				465955A8235B649D002347F9 /* ResourceType.swift in Sources */,
 				4659556E235B24BD002347F9 /* Date+CurrentDate.swift in Sources */,
@@ -1050,6 +1117,7 @@
 				465955C2235BBA2A002347F9 /* SelectLanesTableViewModel.swift in Sources */,
 				46595536235AE4C1002347F9 /* PageViewController.swift in Sources */,
 				4659553E235AE675002347F9 /* Storyboard.swift in Sources */,
+				46499FC7236DA34A00687E20 /* LaneNumericViewerTableViewController.swift in Sources */,
 				46595500235AE43C002347F9 /* AppDelegate.swift in Sources */,
 				465955B3235BAB72002347F9 /* NSManagedObject+EntityName.swift in Sources */,
 				465955B1235BA86D002347F9 /* CoreDataService.swift in Sources */,

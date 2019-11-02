@@ -1,5 +1,5 @@
 //
-//  LaneNumericValueChangerViewModel.swift
+//  LaneNumericViewerViewModel.swift
 //  ProjectME
 //
 //  Created by Robert Sandru on 11/2/19.
@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class LaneNumericValueChangerViewModel {
+class LaneNumericViewerViewModel {
     
     var lane: BehaviorRelay<LaneModel>
     var disposeBag = DisposeBag()

@@ -176,7 +176,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAn-lT-PpR">
-                                <rect key="frame" x="0.0" y="177" width="414" height="719"/>
+                                <rect key="frame" x="0.0" y="185" width="414" height="711"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8b5-W0-P7K" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="710"/>
@@ -188,13 +188,21 @@
                                                     <constraint firstAttribute="height" constant="144" id="ZG3-JW-kYc"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3OE-ac-sT5">
+                                                <rect key="frame" x="0.0" y="160" width="414" height="550"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="710" id="7tP-Kf-u5A"/>
+                                            <constraint firstAttribute="trailing" secondItem="3OE-ac-sT5" secondAttribute="trailing" id="Ceh-Bg-ODY"/>
                                             <constraint firstItem="Dg0-Yc-giU" firstAttribute="top" secondItem="8b5-W0-P7K" secondAttribute="top" constant="8" id="H1d-Vt-Bbc"/>
+                                            <constraint firstItem="3OE-ac-sT5" firstAttribute="top" secondItem="Dg0-Yc-giU" secondAttribute="bottom" constant="8" id="JJM-cV-8N1"/>
+                                            <constraint firstItem="3OE-ac-sT5" firstAttribute="leading" secondItem="8b5-W0-P7K" secondAttribute="leading" id="cRd-hj-GOq"/>
                                             <constraint firstItem="Dg0-Yc-giU" firstAttribute="leading" secondItem="8b5-W0-P7K" secondAttribute="leading" constant="10" id="eML-Lc-ucD"/>
                                             <constraint firstAttribute="trailing" secondItem="Dg0-Yc-giU" secondAttribute="trailing" constant="10" id="fTj-d7-fIB"/>
+                                            <constraint firstAttribute="bottom" secondItem="3OE-ac-sT5" secondAttribute="bottom" id="gGa-zm-EWu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -213,7 +221,7 @@
                         <constraints>
                             <constraint firstItem="9In-qA-PdF" firstAttribute="leading" secondItem="gXL-7j-uJc" secondAttribute="leading" constant="10" id="4AS-FJ-17J"/>
                             <constraint firstAttribute="bottom" secondItem="TAn-lT-PpR" secondAttribute="bottom" id="ATv-Kp-gTe"/>
-                            <constraint firstItem="TAn-lT-PpR" firstAttribute="top" secondItem="9In-qA-PdF" secondAttribute="bottom" id="SgI-Ns-MZw"/>
+                            <constraint firstItem="TAn-lT-PpR" firstAttribute="top" secondItem="9In-qA-PdF" secondAttribute="bottom" constant="8" id="SgI-Ns-MZw"/>
                             <constraint firstItem="TAn-lT-PpR" firstAttribute="leading" secondItem="gXL-7j-uJc" secondAttribute="leading" id="Td5-uz-wyC"/>
                             <constraint firstItem="9In-qA-PdF" firstAttribute="top" secondItem="gXL-7j-uJc" secondAttribute="top" constant="8" id="f8r-gb-bR7"/>
                             <constraint firstItem="TAn-lT-PpR" firstAttribute="trailing" secondItem="gXL-7j-uJc" secondAttribute="trailing" id="ojI-H7-Vn4"/>
@@ -224,6 +232,7 @@
                     <connections>
                         <outlet property="laneHeaderView" destination="9In-qA-PdF" id="gId-UC-OHA"/>
                         <outlet property="laneValueChangerView" destination="Dg0-Yc-giU" id="eNk-ki-1gx"/>
+                        <outlet property="laneValueViewerView" destination="3OE-ac-sT5" id="wtj-CG-ppM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eX8-BB-Exh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
