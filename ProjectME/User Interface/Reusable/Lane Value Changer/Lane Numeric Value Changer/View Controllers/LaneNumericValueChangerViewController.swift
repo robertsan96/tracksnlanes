@@ -8,14 +8,16 @@
 
 import UIKit
 
-protocol LaneNumericValueChangerProtocol: class {
+protocol LaneNumericValueChangerDelegate: class {
     
-    
+    func didAddValue(vc: LaneNumericValueChangerViewController)
 }
 
 class LaneNumericValueChangerViewController: UIViewController {
 
     @IBOutlet weak var valueTextField: UITextField!
+    
+    weak var delegate: LaneNumericValueChangerDelegate?
     
     var valueTextFieldToolbar: UIToolbar = UIToolbar()
     var viewModel: LaneNumericValueChangerViewModel?
@@ -64,6 +66,8 @@ class LaneNumericValueChangerViewController: UIViewController {
         viewModel!.lane.value.addToEntries(newEntry)
         
         CoreDataService.shared.store(object: viewModel!.lane.value)
+        
+        delegate?.didAddValue(vc: self)
     }
 }
 
