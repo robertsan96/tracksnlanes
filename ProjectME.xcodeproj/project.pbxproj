@@ -82,6 +82,8 @@
 		465DADFE2365E1E2007D0C63 /* TextViewWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 465DADFD2365E1E2007D0C63 /* TextViewWithLabel.xib */; };
 		465DAE002365E1F1007D0C63 /* TextViewWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DADFF2365E1F1007D0C63 /* TextViewWithLabel.swift */; };
 		465DAE022365EC76007D0C63 /* LaneModel+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAE012365EC76007D0C63 /* LaneModel+Helpers.swift */; };
+		468155A423714823007CE036 /* TrackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468155A323714823007CE036 /* TrackService.swift */; };
+		468155A823714B79007CE036 /* LaneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468155A723714B79007CE036 /* LaneService.swift */; };
 		837E060A47F4680C4650E36D /* Pods_ProjectME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27E882DD62CCF72C9BF5A97 /* Pods_ProjectME.framework */; };
 		F2464BC15FE2876DF5DC3794 /* Pods_ProjectMETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5A56FF1D30379FC55F4B2F /* Pods_ProjectMETests.framework */; };
 /* End PBXBuildFile section */
@@ -186,6 +188,8 @@
 		465DADFD2365E1E2007D0C63 /* TextViewWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewWithLabel.xib; sourceTree = "<group>"; };
 		465DADFF2365E1F1007D0C63 /* TextViewWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWithLabel.swift; sourceTree = "<group>"; };
 		465DAE012365EC76007D0C63 /* LaneModel+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaneModel+Helpers.swift"; sourceTree = "<group>"; };
+		468155A323714823007CE036 /* TrackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackService.swift; sourceTree = "<group>"; };
+		468155A723714B79007CE036 /* LaneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaneService.swift; sourceTree = "<group>"; };
 		6C1C191FC7D6CC629B51B838 /* Pods-ProjectME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.release.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.release.xcconfig"; sourceTree = "<group>"; };
 		958B0C7BCEE1C29C7E5C4216 /* Pods-ProjectMETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectMETests.release.xcconfig"; path = "Target Support Files/Pods-ProjectMETests/Pods-ProjectMETests.release.xcconfig"; sourceTree = "<group>"; };
 		BE39A6C3F23B42A4E9A3B4A4 /* Pods-ProjectME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectME.debug.xcconfig"; path = "Target Support Files/Pods-ProjectME/Pods-ProjectME.debug.xcconfig"; sourceTree = "<group>"; };
@@ -732,6 +736,8 @@
 		465955AD235BA80E002347F9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				468155A623714B0A007CE036 /* Lane */,
+				468155A523714AFB007CE036 /* Track */,
 				465955AE235BA812002347F9 /* CoreData */,
 			);
 			path = Services;
@@ -749,7 +755,6 @@
 			isa = PBXGroup;
 			children = (
 				465955B7235BB1DB002347F9 /* Track.storyboard */,
-				465955CA235C7742002347F9 /* Service */,
 				465955B5235BB1C7002347F9 /* View Controllers */,
 				465955B6235BB1CD002347F9 /* View Model */,
 			);
@@ -782,14 +787,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		465955CA235C7742002347F9 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				465955CB235C7756002347F9 /* TrackCreationService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		465955D9235CA67D002347F9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -805,6 +802,23 @@
 				465DADFF2365E1F1007D0C63 /* TextViewWithLabel.swift */,
 			);
 			path = "TextView with Label";
+			sourceTree = "<group>";
+		};
+		468155A523714AFB007CE036 /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				465955CB235C7756002347F9 /* TrackCreationService.swift */,
+				468155A323714823007CE036 /* TrackService.swift */,
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
+		468155A623714B0A007CE036 /* Lane */ = {
+			isa = PBXGroup;
+			children = (
+				468155A723714B79007CE036 /* LaneService.swift */,
+			);
+			path = Lane;
 			sourceTree = "<group>";
 		};
 		8CC876DC6CC5DE9C3CBE78E1 /* Frameworks */ = {
@@ -1100,6 +1114,7 @@
 				46595598235B57B8002347F9 /* LaneViewModel.swift in Sources */,
 				46595582235B4493002347F9 /* LaneNavigationViewController.swift in Sources */,
 				465955CE235C90CC002347F9 /* SelectLanesTableViewController.swift in Sources */,
+				468155A423714823007CE036 /* TrackService.swift in Sources */,
 				46595578235B3FA2002347F9 /* NoLanesViewController.swift in Sources */,
 				46595573235B2AFD002347F9 /* HomeOptionModel.swift in Sources */,
 				46595580235B4472002347F9 /* LaneDetailViewController.swift in Sources */,
@@ -1118,6 +1133,7 @@
 				46595536235AE4C1002347F9 /* PageViewController.swift in Sources */,
 				4659553E235AE675002347F9 /* Storyboard.swift in Sources */,
 				46499FC7236DA34A00687E20 /* LaneNumericViewerTableViewController.swift in Sources */,
+				468155A823714B79007CE036 /* LaneService.swift in Sources */,
 				46595500235AE43C002347F9 /* AppDelegate.swift in Sources */,
 				465955B3235BAB72002347F9 /* NSManagedObject+EntityName.swift in Sources */,
 				465955B1235BA86D002347F9 /* CoreDataService.swift in Sources */,
