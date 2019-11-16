@@ -64,26 +64,6 @@ class LaneNumericViewerTableViewController: UITableViewController {
         return UITableViewCell()
     }
     
-//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//
-//        guard let cell = cell as? LaneNumericEntryTableViewCell,
-//            let entries = viewModel?.lane.value.entries?.allObjects as? [LaneEntryModel] else {
-//                return
-//            }
-//        let isFirstCell = indexPath.row == 0
-//        let isLastCell = indexPath.row == entries.count - 1
-//        let isMidCell = !isFirstCell && !isLastCell
-//        if isFirstCell {
-//            cell.load(with: entries[indexPath.row], first: true)
-//        }
-//        if isLastCell {
-//            cell.load(with: entries[indexPath.row], last: true)
-//        }
-//        if isMidCell {
-//
-//        }
-//    }
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }

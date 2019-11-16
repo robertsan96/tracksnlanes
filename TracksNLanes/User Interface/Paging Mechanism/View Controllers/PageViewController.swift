@@ -19,7 +19,7 @@ class PageViewController: UIPageViewController {
         dataSource = self
         delegate = self
         
-        title = viewModel.track.value.name
+        title = viewModel.trackService.track.value.name
         
         let createLaneButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onCreateLane))
         navigationItem.rightBarButtonItem = createLaneButton
@@ -34,7 +34,7 @@ class PageViewController: UIPageViewController {
     @objc func onCreateLane() {
         let laneNVC = try! Storyboard.getVC(with: "LaneNavigationViewController", in: .lane) as! UINavigationController
         let laneVC = try! Storyboard.getVC(with: "LaneDetailViewController", in: .lane) as! LaneDetailViewController
-        let laneVM = LaneDetailViewModel(track: viewModel.track.value)
+        let laneVM = LaneDetailViewModel(track: viewModel.trackService.track.value)
         laneVC.viewModel = laneVM
         laneNVC.viewControllers = [laneVC]
         present(laneNVC, animated: true, completion: nil)
@@ -72,7 +72,7 @@ extension PageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         let vc = try! Storyboard.getVC(with: "LaneControlLayOneViewController", in: .lane) as? LaneControlLayOneViewController
-        let lanes = viewModel.track.value.lanes?.allObjects as? [LaneModel]
+        let lanes = viewModel.trackService.track.value.lanes?.allObjects as? [LaneModel]
         precondition(lanes != nil, "Has no lanes")
         
         vc?.viewModel = LaneControlViewModel(lane: lanes![0])

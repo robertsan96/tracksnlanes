@@ -18,18 +18,18 @@ class PageViewModel {
     }
     
     var viewControllers: [UIViewController] = []
-    var track: BehaviorRelay<TrackModel>
+    var trackService: TrackService
     var vcState: BehaviorRelay<State> = BehaviorRelay(value: .idle)
     var disposeBag: DisposeBag = DisposeBag()
     
     init(track: TrackModel) {
-        self.track = BehaviorRelay(value: track)
+        trackService = TrackService(with: track)
         
         processLanes()
     }
         
     func processLanes() {
-        if track.value.lanes?.count == 0 {
+        if trackService.track.value.lanes?.count == 0 {
             let noLanesVC = try! Storyboard.getVC(with: "NoLanesViewController")
             viewControllers.append(noLanesVC)
             vcState.accept(.noLanes)
