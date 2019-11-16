@@ -1,0 +1,6 @@
+framework module Pods_TracksNLanes_TracksNLanesUITests {
+  umbrella header "Pods-TracksNLanes-TracksNLanesUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

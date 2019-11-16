@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-ProjectME-ProjectMEUITests.xcscheme</key>
+		<key>Pods-TracksNLanes-TracksNLanesUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ProjectME.xcscheme</key>
+		<key>Pods-TracksNLanes.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ProjectMETests.xcscheme</key>
+		<key>Pods-TracksNLanesTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

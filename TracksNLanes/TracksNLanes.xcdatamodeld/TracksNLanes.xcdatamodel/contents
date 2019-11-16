@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LaneEntryImageModel" representedClassName="LaneEntryImageModel" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="LaneEntryModel"/>
+    </entity>
+    <entity name="LaneEntryModel" representedClassName="LaneEntryModel" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="LaneEntryImageModel"/>
+        <relationship name="lane" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="LaneModel"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="LaneEntryNoteModel"/>
+        <relationship name="values" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="LaneEntryValueModel"/>
+    </entity>
+    <entity name="LaneEntryNoteModel" representedClassName="LaneEntryNoteModel" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="LaneEntryModel"/>
+    </entity>
+    <entity name="LaneEntryValueModel" representedClassName="LaneEntryValueModel" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="value" optional="YES" attributeType="String"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="LaneEntryModel"/>
+    </entity>
+    <entity name="LaneModel" representedClassName="LaneModel" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descriptionLong" optional="YES" attributeType="String"/>
+        <attribute name="descriptionShort" optional="YES" attributeType="String"/>
+        <attribute name="locked" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="premium" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="system" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="temporary" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="unitSystemIdentifier" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="LaneEntryModel"/>
+        <relationship name="track" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="TrackModel"/>
+    </entity>
+    <entity name="TrackModel" representedClassName="TrackModel" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="system" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="lanes" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="LaneModel" spotlightIndexingEnabled="YES"/>
+    </entity>
+    <elements>
+        <element name="TrackModel" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="LaneEntryImageModel" positionX="-54" positionY="-9" width="128" height="103"/>
+        <element name="LaneEntryNoteModel" positionX="-36" positionY="9" width="128" height="103"/>
+        <element name="LaneEntryValueModel" positionX="-18" positionY="27" width="128" height="103"/>
+        <element name="LaneEntryModel" positionX="0" positionY="45" width="128" height="133"/>
+        <element name="LaneModel" positionX="18" positionY="63" width="128" height="223"/>
+    </elements>
+</model>

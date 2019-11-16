@@ -1,0 +1,6 @@
+framework module Pods_TracksNLanes {
+  umbrella header "Pods-TracksNLanes-umbrella.h"
+
+  export *
+  module * { export * }
+}
