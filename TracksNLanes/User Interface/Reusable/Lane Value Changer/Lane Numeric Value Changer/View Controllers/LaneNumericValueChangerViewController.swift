@@ -25,9 +25,8 @@ class LaneNumericValueChangerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel?.delegate?.didInitInitialData()
         setupValueTextField()
-        
-        observe()
     }
     
     func setupValueTextField() {
@@ -63,21 +62,18 @@ class LaneNumericValueChangerViewController: UIViewController {
         
         newEntry.addToValues(valueEntry)
         
-        viewModel!.lane.value.addToEntries(newEntry)
+        viewModel!.lane.addToEntries(newEntry)
         
-        CoreDataService.shared.store(object: viewModel!.lane.value)
+//        CoreDataService.shared.store(object: viewModel!.lane)
         
         delegate?.didAddValue(vc: self)
     }
 }
 
-extension LaneNumericValueChangerViewController {
+// MARK: - UIViewModelDelegate
+extension LaneNumericValueChangerViewController: UIViewModelDelegate {
     
-    func observe() {
-        guard let vm = viewModel else { return }
+    func didInitInitialData() {
         
-        vm.lane.subscribe(onNext: { [weak self] lane in
-            
-        }).disposed(by: vm.disposeBag)
     }
 }

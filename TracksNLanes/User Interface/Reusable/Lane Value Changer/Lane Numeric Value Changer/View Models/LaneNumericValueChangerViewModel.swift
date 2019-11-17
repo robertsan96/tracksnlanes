@@ -10,12 +10,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class LaneNumericValueChangerViewModel {
+class LaneNumericValueChangerViewModel: UIViewModel {
     
-    var lane: BehaviorRelay<LaneModel>
+    var lane: LaneModel
     var disposeBag = DisposeBag()
     
     init(with lane: LaneModel) {
-        self.lane = BehaviorRelay(value: lane)
+        self.lane = lane
     }
 }

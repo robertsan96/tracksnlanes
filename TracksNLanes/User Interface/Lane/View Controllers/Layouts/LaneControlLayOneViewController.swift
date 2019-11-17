@@ -25,6 +25,7 @@ class LaneControlLayOneViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.delegate?.didInitInitialData()
+        observe()
     }
     
     /// Must be called as soon as we have the lane model.
@@ -49,13 +50,13 @@ class LaneControlLayOneViewController: UIViewController {
         let laneValueChangerComponentVM = LaneNumericValueChangerViewModel(with: lane)
         
         laneValueChangerComponentVC.viewModel = laneValueChangerComponentVM
+        laneValueChangerComponentVM.delegate = laneValueChangerComponentVC
         
         addChild(laneValueChangerComponentVC)
         laneValueChangerView.addSubview(laneValueChangerComponentVC.view)
         laneValueChangerComponentVC.view.frame = laneValueChangerView.bounds
         laneValueChangerComponentVC.didMove(toParent: self)
         
-        laneValueChangerComponentVC.delegate = self
         self.laneValueChangerVC = laneValueChangerComponentVC
     }
     
@@ -77,13 +78,6 @@ class LaneControlLayOneViewController: UIViewController {
     }
 }
 
-extension LaneControlLayOneViewController: LaneNumericValueChangerDelegate {
-    
-    func didAddValue(vc: LaneNumericValueChangerViewController) {
-        laneValueViewerVC?.tableView.reloadData()
-    }
-}
-
 // MARK: - UIViewModelDelegate
 extension LaneControlLayOneViewController: UIViewModelDelegate {
     
@@ -92,5 +86,17 @@ extension LaneControlLayOneViewController: UIViewModelDelegate {
         setupLaneHeaderVC(for: viewModel!.lane)
         setupLaneValueChangerVC(for: viewModel!.lane)
         setupLaneValueViewerVC(for: viewModel!.lane)
+    }
+}
+
+// MARK: - Rx
+extension LaneControlLayOneViewController {
+    
+    func observe() {
+        /// Have in mind that the the subscription returns the number of entries until you add. If you add,
+        /// the subscription will have 1 exactly entry! Research.
+        viewModel.lane.rx.observe(NSSet.self, "entries").subscribe(onNext: { _ in
+            self.laneValueViewerVC?.tableView.reloadData()
+        }).disposed(by: viewModel.disposeBag)
     }
 }
