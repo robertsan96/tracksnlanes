@@ -19,12 +19,12 @@ class LaneControlLayOneViewController: UIViewController {
     private var laneValueChangerVC: LaneNumericValueChangerViewController?
     private var laneValueViewerVC: LaneNumericViewerTableViewController?
     
-    var viewModel: LaneControlViewModel?
+    var viewModel: LaneControlViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        observe()
+        viewModel.delegate?.didInitInitialData()
     }
     
     /// Must be called as soon as we have the lane model.
@@ -84,15 +84,13 @@ extension LaneControlLayOneViewController: LaneNumericValueChangerDelegate {
     }
 }
 
-extension LaneControlLayOneViewController {
+// MARK: - UIViewModelDelegate
+extension LaneControlLayOneViewController: UIViewModelDelegate {
     
-    func observe() {
-        guard let vm = viewModel else { return }
-        vm.lane.subscribe(onNext: { [weak self] lane in
-            guard let `self` = self, let lane = lane else { return }
-            self.setupLaneHeaderVC(for: lane)
-            self.setupLaneValueChangerVC(for: lane)
-            self.setupLaneValueViewerVC(for: lane)
-        }).disposed(by: vm.disposeBag)
+    func didInitInitialData() {
+        precondition(viewModel != nil, "View Model is not initialized.")
+        setupLaneHeaderVC(for: viewModel!.lane)
+        setupLaneValueChangerVC(for: viewModel!.lane)
+        setupLaneValueViewerVC(for: viewModel!.lane)
     }
 }

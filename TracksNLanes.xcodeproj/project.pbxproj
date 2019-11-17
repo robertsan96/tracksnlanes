@@ -83,6 +83,7 @@
 		465DAE022365EC76007D0C63 /* LaneModel+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DAE012365EC76007D0C63 /* LaneModel+Helpers.swift */; };
 		468155A423714823007CE036 /* TrackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468155A323714823007CE036 /* TrackService.swift */; };
 		4684DA08237FE2B80017323F /* TracksNLanes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4684DA06237FE2B80017323F /* TracksNLanes.xcdatamodeld */; };
+		4684DA0B238068B30017323F /* UIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684DA0A238068B30017323F /* UIViewModel.swift */; };
 		D4CFB0F7434636F381075A25 /* Pods_TracksNLanes_TracksNLanesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65103AA5F2346CA5481695A /* Pods_TracksNLanes_TracksNLanesUITests.framework */; };
 		F5D7D53099EFA48FFADBF7C1 /* Pods_TracksNLanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9470AEB1A6B18F3844B9862 /* Pods_TracksNLanes.framework */; };
 /* End PBXBuildFile section */
@@ -187,6 +188,7 @@
 		465DAE012365EC76007D0C63 /* LaneModel+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaneModel+Helpers.swift"; sourceTree = "<group>"; };
 		468155A323714823007CE036 /* TrackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackService.swift; sourceTree = "<group>"; };
 		4684DA07237FE2B80017323F /* TracksNLanes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TracksNLanes.xcdatamodel; sourceTree = "<group>"; };
+		4684DA0A238068B30017323F /* UIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewModel.swift; sourceTree = "<group>"; };
 		4EA2A6D5FBE6FB27B22093B2 /* Pods-TracksNLanes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TracksNLanes.debug.xcconfig"; path = "Target Support Files/Pods-TracksNLanes/Pods-TracksNLanes.debug.xcconfig"; sourceTree = "<group>"; };
 		651D00A617FC5B2D1B8FEA35 /* Pods-TracksNLanesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TracksNLanesTests.release.xcconfig"; path = "Target Support Files/Pods-TracksNLanesTests/Pods-TracksNLanesTests.release.xcconfig"; sourceTree = "<group>"; };
 		9A097FEC0259D52ECC87D902 /* Pods-TracksNLanes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TracksNLanes.release.xcconfig"; path = "Target Support Files/Pods-TracksNLanes/Pods-TracksNLanes.release.xcconfig"; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 		4659553A235AE654002347F9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				4684DA09238068A30017323F /* Framework */,
 				465955D9235CA67D002347F9 /* Utils */,
 				465955AD235BA80E002347F9 /* Services */,
 				465955A6235B6495002347F9 /* Resource Types */,
@@ -808,6 +811,14 @@
 				468155A323714823007CE036 /* TrackService.swift */,
 			);
 			path = Track;
+			sourceTree = "<group>";
+		};
+		4684DA09238068A30017323F /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				4684DA0A238068B30017323F /* UIViewModel.swift */,
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 		C30A40123DBE9D3AB15A08FF /* Frameworks */ = {
@@ -1133,6 +1144,7 @@
 				465955A1235B6200002347F9 /* TrackKilogramsViewController.swift in Sources */,
 				465DAE002365E1F1007D0C63 /* TextViewWithLabel.swift in Sources */,
 				465955BC235BB253002347F9 /* TrackDetailViewController.swift in Sources */,
+				4684DA0B238068B30017323F /* UIViewModel.swift in Sources */,
 				46595502235AE43D002347F9 /* SceneDelegate.swift in Sources */,
 				46595555235B1032002347F9 /* HomeTableViewController.swift in Sources */,
 				46595568235B1B96002347F9 /* TimestampModel.swift in Sources */,

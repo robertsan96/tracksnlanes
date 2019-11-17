@@ -75,7 +75,7 @@ extension PageViewController: UIPageViewControllerDataSource {
         let lanes = viewModel.trackService.track.value.lanes?.allObjects as? [LaneModel]
         precondition(lanes != nil, "Has no lanes")
         
-        vc?.viewModel = LaneControlViewModel(lane: lanes![0])
+        vc?.viewModel = LaneControlViewModel(lane: lanes![0], withDelegate: vc)
         return vc
     }
     

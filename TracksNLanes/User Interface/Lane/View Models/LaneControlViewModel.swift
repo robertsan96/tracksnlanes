@@ -10,12 +10,14 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-class LaneControlViewModel {
+class LaneControlViewModel: UIViewModel {
     
-    var lane: BehaviorRelay<LaneModel?> = BehaviorRelay(value: nil)
+    var lane: LaneModel
     var disposeBag = DisposeBag()
     
-    init(lane: LaneModel) {
-        self.lane.accept(lane)
+    init(lane: LaneModel, withDelegate delegate: UIViewModelDelegate? = nil) {
+        
+        self.lane = lane
+        super.init(withDelegate: delegate)
     }
 }
